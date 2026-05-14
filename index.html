@@ -116,9 +116,21 @@ main {
   100% { background-position: 0%; }
 }
 
-.header-container {
-  text-align: center;
-  margin-bottom: 40px;
+.header-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.foto-evy {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--calipso);
+  box-shadow: 0 0 20px rgba(34,211,238,0.6);
 }
 
 .img-header {
@@ -258,25 +270,8 @@ footer {
   font-size: 0.9rem;
   border-top: 1px solid rgba(255,255,255,0.1);
 }
-
-@media (max-width: 768px) {
-  .main-title { font-size: 1.4rem; }
-  .img-header { max-width: 280px; }
-  .card { padding: 18px; }
-  .btn, .btn-contact { font-size: 0.75rem; padding: 14px; }
-  .toggle-container { top: 12px; right: 12px; }
-  .toggle-chip { padding: 10px 18px; font-size: 0.75rem; }
-}
-
-@media (max-width: 480px) {
-  .main-title { font-size: 1.2rem; }
-  .img-header { max-width: 240px; }
-  .btn, .btn-contact { font-size: 0.7rem; }
-  .card { padding: 15px; }
-}
 </style>
 </head>
-
 <body>
 
 <div id="particles-js"></div>
@@ -287,167 +282,149 @@ footer {
 
 <main id="inicio">
 
-  <h1 class="main-title">Melissa Zamorano Levy – Salud Digital</h1>
+<h1 class="main-title">Melissa Zamorano Levy – Salud Digital</h1>
 
-  <div class="header-container">
-    <img src="img/banner-ovalado.png" class="img-header" alt="Banner futurista Melissa Zamorano">
-  </div>
+<!-- FOTO IZQUIERDA + BANNER -->
+<div class="header-flex">
+  <img src="img/foto-evy.png" class="foto-evy" alt="Foto profesional de Melissa Zamorano">
+  <img src="img/banner-ovalado.png" class="img-header" alt="Banner futurista Melissa Zamorano">
+</div>
 
-  <span class="section-label">Presentación</span>
-  <div class="card" id="perfil">
-    <h2 class="text-holo">Melissa Zamorano Levy</h2>
+<!-- PRESENTACIÓN -->
+<span class="section-label">Presentación</span>
+<div class="card">
+  <h2 class="text-holo">Melissa Zamorano Levy</h2>
 
-    <p><b>Tecnóloga en Informática Biomédica</b> y <b>Técnico Superior de Enfermería</b>, con 16 años de trayectoria clínica y una formación híbrida que integra experiencia asistencial con competencias avanzadas en Salud Digital.</p>
+  <p><b>Tecnóloga en Informática Biomédica</b> y <b>Técnico Superior de Enfermería</b>, con 16 años de trayectoria clínica y una formación híbrida que integra experiencia asistencial con competencias avanzadas en Salud Digital.</p>
 
-    <p>Especializada en <b>soporte funcional HIS (TrakCare)</b>, <b>interoperabilidad</b>, <b>RCE</b> y <b>gestión de incidencias críticas</b>, asegurando continuidad operativa en entornos de alta demanda.</p>
+  <p>Especializada en <b>soporte funcional HIS (TrakCare)</b>, <b>interoperabilidad</b>, <b>RCE</b> y <b>gestión de incidencias críticas</b>, asegurando continuidad operativa en entornos de alta demanda.</p>
 
-    <p>Experiencia en instituciones <b>públicas y privadas</b>, actuando como enlace entre <b>equipos clínicos y TI</b> para fortalecer la adopción digital, mejorar flujos asistenciales y optimizar procesos con foco en seguridad del paciente y calidad de datos.</p>
+  <p>Experiencia en instituciones <b>públicas y privadas</b>, actuando como enlace entre <b>equipos clínicos y TI</b> para fortalecer la adopción digital, mejorar flujos asistenciales y optimizar procesos con foco en seguridad del paciente y calidad de datos.</p>
 
-    <p>Complemento mi perfil con formación en <b>Evaluación de Proyectos TI</b>, lo que me permite analizar soluciones digitales desde una mirada integral —clínica, operativa y funcional— garantizando implementaciones eficientes, seguras y alineadas con las necesidades reales de los equipos asistenciales.</p>
+  <p>Complemento mi perfil con formación en <b>Evaluación de Proyectos TI</b>, lo que me permite analizar soluciones digitales desde una mirada integral —clínica, operativa y funcional— garantizando implementaciones eficientes, seguras y alineadas con las necesidades reales de los equipos asistenciales.</p>
 
-    <a class="btn" href="docs/cv-melissa-zamorano.pdf" download target="_blank">
-      ✔ Descargar CV Completo
-    </a>
-  </div>
+  <a class="btn" href="docs/cv-melissa-zamorano.pdf" download target="_blank">✔ Descargar CV Completo</a>
+</div>
 
-  <span class="section-label">Visualización de Sistemas</span>
-  <div class="card">
-    <h3 class="text-holo">Ecosistema Health Digital Tech</h3>
-    <img src="img/img_web.png" class="img-portfolio" alt="Dashboard Health Digital Tech">
-  </div>
+<!-- VISUALIZACIÓN -->
+<span class="section-label">Visualización de Sistemas</span>
+<div class="card">
+  <h3 class="text-holo">Ecosistema Health Digital Tech</h3>
+  <img src="img/img_web.png" class="img-portfolio" alt="Dashboard Health Digital Tech">
+</div>
 
-  <span class="section-label">Informática Biomédica</span>
-  <div class="card">
-    <h3 class="text-holo">Informática Biomédica</h3>
-    <ul>
-      <li>Implementación y soporte funcional HIS.</li>
-      <li>Gestión de incidencias y continuidad operativa.</li>
-      <li>Optimización de flujos clínicos.</li>
-      <li>Calidad y trazabilidad de datos clínicos.</li>
-      <li>Interoperabilidad (HL7, FHIR, SNOMED CT).</li>
-      <li>Capacitación y adopción digital.</li>
-      <li>Evaluación de proyectos TI.</li>
-    </ul>
-  </div>
+<!-- INFORMÁTICA BIOMÉDICA -->
+<span class="section-label">Informática Biomédica</span>
+<div class="card">
+  <h3 class="text-holo">Informática Biomédica</h3>
+  <ul>
+    <li>Implementación y soporte funcional HIS.</li>
+    <li>Gestión de incidencias y continuidad operativa.</li>
+    <li>Optimización de flujos clínicos.</li>
+    <li>Calidad y trazabilidad de datos clínicos.</li>
+    <li>Interoperabilidad (HL7, FHIR, SNOMED CT).</li>
+    <li>Capacitación y adopción digital.</li>
+    <li>Evaluación de proyectos TI.</li>
+  </ul>
+</div>
 
-  <span class="section-label">Técnico Superior de Enfermería (TENS)</span>
-  <div class="card">
-    <h3 class="text-holo">TENS</h3>
-    <ul>
-      <li>Administración de medicamentos.</li>
-      <li>Signos vitales y registros.</li>
-      <li>Curaciones simples y avanzadas.</li>
-      <li>Cuidados respiratorios.</li>
-      <li>Manejo de traqueostomía.</li>
-      <li>Manejo de colostomía.</li>
-      <li>Alimentación asistida.</li>
-      <li>Vacunación particular y a domicilio.</li>
-    </ul>
+<!-- TENS -->
+<span class="section-label">Técnico Superior de Enfermería (TENS)</span>
+<div class="card">
+  <h3 class="text-holo">TENS</h3>
+  <ul>
+    <li>Administración de medicamentos.</li>
+    <li>Signos vitales y registros.</li>
+    <li>Curaciones simples y avanzadas.</li>
+    <li>Cuidados respiratorios.</li>
+    <li>Manejo de traqueostomía.</li>
+    <li>Manejo de colostomía.</li>
+    <li>Alimentación asistida.</li>
+    <li>Vacunación particular y a domicilio.</li>
+  </ul>
 
-    <a class="btn" href="docs/titulo-tens.pdf" download target="_blank">
-      ✔ Descargar Título Técnico Superior de Enfermería
-    </a>
-    <a class="btn" href="docs/registro-prestadores.pdf" download target="_blank">
-      ✔ Descargar Registro de Prestador de Salud
-    </a>
-  </div>
+  <a class="btn" href="docs/titulo-tens.pdf" download target="_blank">✔ Descargar Título Técnico Superior de Enfermería</a>
+  <a class="btn" href="docs/registro-prestadores.pdf" download target="_blank">✔ Descargar Registro de Prestador de Salud</a>
+</div>
 
-  <span class="section-label" id="certificados">Títulos & Certificados</span>
-  <div class="card">
-    <h3 class="text-holo">Títulos & Certificados</h3>
+<!-- TÍTULOS -->
+<span class="section-label">Títulos & Certificados</span>
+<div class="card">
+  <h3 class="text-holo">Títulos & Certificados</h3>
 
-    <ul style="list-style:none; padding-left:0; line-height:1.8;">
-      <li>✔ <b>Tecnóloga en Informática Biomédica</b> — DUOC UC</li>
-      <li>✔ <b>Técnico Superior de Enfermería</b> — DUOC UC</li>
-      <li>✔ <b>Evaluación de Proyectos TI</b> — Pontificia Universidad Católica de Chile</li>
-    </ul>
+  <ul style="list-style:none; padding-left:0; line-height:1.8;">
+    <li>✔ Tecnóloga en Informática Biomédica — DUOC UC</li>
+    <li>✔ Técnico Superior de Enfermería — DUOC UC</li>
+    <li>✔ Evaluación de Proyectos TI — Pontificia Universidad Católica de Chile</li>
+  </ul>
 
-    <a class="btn" href="docs/titulo-tecnologa.pdf" download target="_blank">
-      ✔ Descargar Título Tecnóloga en Informática Biomédica
-    </a>
-    <a class="btn" href="docs/titulo-tens.pdf" download target="_blank">
-      ✔ Descargar Título Técnico Superior de Enfermería
-    </a>
-    <a class="btn" href="docs/certificado-epti.pdf" download target="_blank">
-      ✔ Descargar Certificado Evaluación de Proyectos TI
-    </a>
-    <a class="btn" href="docs/registro-prestadores.pdf" download target="_blank">
-      ✔ Descargar Registro de Prestador de Salud
-    </a>
-    <a class="btn" href="docs/cv-melissa-zamorano.pdf" download target="_blank">
-      ✔ Descargar CV Completo
-    </a>
-  </div>
+  <a class="btn" href="docs/titulo-tecnologa.pdf" download target="_blank">✔ Descargar Título Tecnóloga en Informática Biomédica</a>
+  <a class="btn" href="docs/titulo-tens.pdf" download target="_blank">✔ Descargar Título Técnico Superior de Enfermería</a>
+  <a class="btn" href="docs/certificado-epti.pdf" download target="_blank">✔ Descargar Certificado Evaluación de Proyectos TI</a>
+  <a class="btn" href="docs/registro-prestadores.pdf" download target="_blank">✔ Descargar Registro de Prestador de Salud</a>
+  <a class="btn" href="docs/cv-melissa-zamorano.pdf" download target="_blank">✔ Descargar CV Completo</a>
+</div>
 
-  <div class="card" style="text-align:center;">
-    <img src="img/acreditada.png" class="img-acred" alt="Acreditación en calidad de procesos de atención en salud">
-  </div>
+<!-- ACREDITACIÓN -->
+<div class="card" style="text-align:center;">
+  <img src="img/acreditada.png" class="img-acred" alt="Acreditación en calidad de procesos de atención en salud">
+</div>
 
-  <span class="section-label">Certificados Internacionales OPS/PAHO</span>
-  <div class="card">
-    <h3 class="text-holo">Certificados Internacionales</h3>
+<!-- CERTIFICADOS OPS -->
+<span class="section-label">Certificados Internacionales OPS/PAHO</span>
+<div class="card">
+  <h3 class="text-holo">Certificados Internacionales</h3>
 
-    <ul style="list-style:none; padding-left:0; line-height:1.8;">
-      <li>✔ Interoperabilidad & FHIR</li>
-      <li>✔ CIE‑11</li>
-      <li>✔ Monitoreo y Evaluación APS</li>
-      <li>✔ Higiene de Manos (COVID‑19)</li>
-      <li>✔ Prevención y Control de Infecciones</li>
-      <li>✔ Sistemas de Información en Salud</li>
-    </ul>
+  <ul style="list-style:none; padding-left:0; line-height:1.8;">
+    <li>✔ Interoperabilidad & FHIR</li>
+    <li>✔ CIE‑11</li>
+    <li>✔ Monitoreo y Evaluación APS</li>
+    <li>✔ Higiene de Manos (COVID‑19)</li>
+    <li>✔ Prevención y Control de Infecciones</li>
+    <li>✔ Sistemas de Información en Salud</li>
+  </ul>
 
-    <a class="btn" href="docs/interoperabilidadfhir.pdf" download target="_blank">
-      ✔ Descargar Interoperabilidad & FHIR
-    </a>
-    <a class="btn" href="docs/cie-11.pdf" download target="_blank">
-      ✔ Descargar CIE‑11
-    </a>
-    <a class="btn" href="docs/monitoreoaps.pdf" download target="_blank">
-      ✔ Descargar Monitoreo y Evaluación APS
-    </a>
-    <a class="btn" href="docs/higienemanos.pdf" download target="_blank">
-      ✔ Descargar Higiene de Manos
-    </a>
-    <a class="btn" href="docs/prevencioninfecciones.pdf" download target="_blank">
-      ✔ Descargar Prevención y Control de Infecciones
-    </a>
-    <a class="btn" href="docs/sistemasinformacionsalud.pdf" download target="_blank">
-      ✔ Descargar Sistemas de Información en Salud
-    </a>
-  </div>
+  <a class="btn" href="docs/interoperabilidadfhir.pdf" download target="_blank">✔ Descargar Interoperabilidad & FHIR</a>
+  <a class="btn" href="docs/cie-11.pdf" download target="_blank">✔ Descargar CIE‑11</a>
+  <a class="btn" href="docs/monitoreoaps.pdf" download target="_blank">✔ Descargar Monitoreo y Evaluación APS</a>
+  <a class="btn" href="docs/higienemanos.pdf" download target="_blank">✔ Descargar Higiene de Manos</a>
+  <a class="btn" href="docs/prevencioninfecciones.pdf" download target="_blank">✔ Descargar Prevención y Control de Infecciones</a>
+  <a class="btn" href="docs/sistemasinformacionsalud.pdf" download target="_blank">✔ Descargar Sistemas de Información en Salud</a>
+</div>
+<!-- RESEÑAS -->
+<span class="section-label">Reseñas Profesionales</span>
+<div class="card">
+  <h3 class="text-holo">Reseñas</h3>
 
-  <span class="section-label">Reseñas Profesionales</span>
-  <div class="card">
-    <h3 class="text-holo">Reseñas</h3>
+  <p>“Melissa destaca por su capacidad para resolver incidencias como consultor funcional HIS con rapidez y claridad, siempre manteniendo una comunicación efectiva con los equipos clínicos.”</p>
+  <p>“Su dominio de TrakCare y su enfoque en continuidad operativa han sido clave para mejorar los flujos clínicos en nuestro servicio.”</p>
+  <p>“Excelente en capacitación: explica procesos complejos de forma simple, logrando una adopción digital real en equipos multidisciplinarios.”</p>
+  <p>“Su visión híbrida clínico–tecnológica aporta un valor único en proyectos de Salud Digital, especialmente en la <b>evaluación y validación de proyectos TI</b>.”</p>
+</div>
 
-    <p>“Melissa destaca por su capacidad para resolver incidencias como consultor funcional HIS con rapidez y claridad, siempre manteniendo una comunicación efectiva con los equipos clínicos.”</p>
-    <p>“Su dominio de TrakCare y su enfoque en continuidad operativa han sido clave para mejorar los flujos clínicos en nuestro servicio.”</p>
-    <p>“Excelente en capacitación: explica procesos complejos de forma simple, logrando una adopción digital real en equipos multidisciplinarios.”</p>
-    <p>“Su visión híbrida clínico–tecnológica aporta un valor único en proyectos de Salud Digital, especialmente en la <b>evaluación y validación de proyectos TI</b>.”</p>
-  </div>
+<!-- CONTACTO -->
+<span class="section-label" id="contacto">Contacto Profesional</span>
+<div class="card">
+  <p style="text-align:center; color:var(--calipso); font-size:1rem; margin-bottom:20px;">
+    Para coordinación, soporte o consultas profesionales:
+  </p>
 
-  <span class="section-label" id="contacto">Contacto Profesional</span>
-  <div class="card">
-    <p style="text-align:center; color:var(--calipso); font-size:1rem; margin-bottom:20px;">
-      Para coordinación, soporte o consultas profesionales:
-    </p>
+  <a class="btn-contact" href="mailto:melissazamoranolevy34@gmail.com">
+    ✉️ Email Profesional
+  </a>
 
-    <a class="btn-contact" href="mailto:melissazamoranolevy34@gmail.com">
-      ✉️ Email Profesional
-    </a>
+  <a class="btn-contact" href="https://wa.me/56958758398" target="_blank">
+    📱 WhatsApp Directo
+  </a>
 
-    <a class="btn-contact" href="https://wa.me/56958758398" target="_blank">
-      📱 WhatsApp Directo
-    </a>
+  <a class="btn-contact" href="https://www.linkedin.com/in/melissa-z-7713a4217" target="_blank">
+    🔗 LinkedIn Profesional
+  </a>
+</div>
 
-    <a class="btn-contact" href="https://www.linkedin.com/in/melissa-z-7713a4217" target="_blank">
-      🔗 LinkedIn Profesional
-    </a>
-  </div>
-
-  <footer>
-    © 2026 Melissa Zamorano Levy · Salud Digital & Informática Biomédica
-  </footer>
+<footer>
+  © 2026 Melissa Zamorano Levy · Salud Digital & Informática Biomédica
+</footer>
 
 </main>
 
@@ -484,3 +461,4 @@ toggleChip.addEventListener('click', () => {
 
 </body>
 </html>
+
