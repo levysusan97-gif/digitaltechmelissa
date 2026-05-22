@@ -3,460 +3,470 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Melissa Zamorano – Salud Digital</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Melissa Zamorano Levy – Salud Digital Futurista</title>
+<meta name="description" content="Portafolio profesional de Melissa Zamorano Levy: Informática Biomédica, TENS, Salud Digital, Evaluación de Proyectos TI, certificaciones y contacto.">
+<meta name="theme-color" content="#22d3ee">
 
 <style>
 :root {
-  --morado-oscuro: #1a0b2e;
-  --morado-neon: #a855f7;
-  --fucsia: #ec4899;
-  --calipso: #22d3ee;
-  --blanco: #f9fafb;
+  --bg-main: radial-gradient(circle at 50% 50%, #090018, #03000a 80%);
+  --text-main: #f9fafb;
+  --card-bg: rgba(255,255,255,0.05);
+  --card-border: rgba(34,211,238,0.4);
+  --accent-1: #22d3ee;
+  --accent-2: #ec4899;
+  --review-title: #22d3ee;
+  --review-text: #7deaff;
 }
-
+.high-contrast {
+  --bg-main: #000000;
+  --text-main: #ffffff;
+  --card-bg: #111111;
+  --card-border: #ffffff;
+  --accent-1: #00ffff;
+  --accent-2: #ff00ff;
+  --review-title: #00ffff;
+  --review-text: #b3ffff;
+}
 body {
-  background: var(--morado-oscuro);
-  background-image: radial-gradient(circle at 50% 50%, #2e1065 0%, #05070f 100%);
-  font-family: "Space Grotesk", sans-serif;
-  color: var(--blanco);
   margin: 0;
   padding: 0;
+  background: var(--bg-main);
+  font-family: "Space Grotesk", sans-serif;
+  color: var(--text-main);
+  line-height: 1.6;
   overflow-x: hidden;
-  transition: 0.5s ease;
 }
-
-body.no-anim * {
-  animation: none !important;
-  transition: none !important;
-  box-shadow: none !important;
-  filter: none !important;
-  text-shadow: none !important;
-  transform: none !important;
+:focus-visible {
+  outline: 3px solid var(--accent-1);
+  outline-offset: 4px;
 }
-
-#particles-js {
+.access-bar {
   position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  top: 0;
-  left: 0;
-}
-
-.toggle-container {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 6000;
-}
-
-.toggle-chip {
-  padding: 14px 36px;
-  background: #0b0d16;
-  border-radius: 40px;
-  font-weight: 700;
-  cursor: pointer;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #ffffff;
-  border: 2px solid transparent;
-  background-image:
-    linear-gradient(#0b0d16, #0b0d16),
-    linear-gradient(90deg, #ec4899, #22d3ee);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
-  box-shadow:
-    0 0 12px rgba(236, 72, 153, 0.35),
-    0 0 18px rgba(34, 211, 238, 0.35);
-  animation: chipFloat 4s ease-in-out infinite;
-  transition: 0.25s ease;
-}
-
-.toggle-chip.off {
-  background-image:
-    linear-gradient(#0b0d16, #0b0d16),
-    linear-gradient(90deg, #555, #777);
-  color: #bfbfbf;
-  box-shadow: none;
-}
-
-@keyframes chipFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-
-main {
-  max-width: 900px;
-  margin: 140px auto 40px;
-  padding: 20px;
-  animation: fadeIn 1.5s ease;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.main-title {
-  text-align: center;
-  font-size: 1.8rem;
-  font-weight: 800;
-  margin-bottom: 25px;
-  background: linear-gradient(90deg, var(--calipso), var(--fucsia));
-  -webkit-background-clip: text;
-  color: transparent;
-  animation: holoMove 4s linear infinite;
-}
-
-@keyframes holoMove {
-  0% { background-position: 0%; }
-  50% { background-position: 100%; }
-  100% { background-position: 0%; }
-}
-
-.header-flex {
+  top: 16px;
+  left: 16px;
+  z-index: 50;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 25px;
-  flex-wrap: wrap;
+  gap: 8px;
+  background: rgba(0,0,0,0.7);
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--accent-1);
+  backdrop-filter: blur(10px);
 }
-
-.foto-evy {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
+.access-btn {
+  background: transparent;
+  border-radius: 999px;
+  border: 1px solid var(--accent-1);
+  color: var(--text-main);
+  padding: 4px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.access-btn:hover {
+  background: var(--accent-1);
+  color: #000;
+}
+.nebulosa {
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background:
+    radial-gradient(circle, rgba(34,211,238,0.18), transparent 60%),
+    radial-gradient(circle, rgba(236,72,153,0.14), transparent 70%);
+  animation: nebulaMove 40s infinite linear;
+  z-index: -3;
+  filter: blur(80px);
+}
+@keyframes nebulaMove {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.2); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+.particle {
+  position: fixed;
+  width: 2px;
+  height: 2px;
+  background: var(--accent-1);
   border-radius: 50%;
-  border: 2px solid var(--calipso);
-  box-shadow: 0 0 20px rgba(34,211,238,0.6);
+  box-shadow: 0 0 8px var(--accent-1);
+  opacity: 0.9;
+  pointer-events: none;
+  animation: moveParticle 12s infinite ease-in-out alternate,
+             glowParticle 3s infinite ease-in-out;
 }
-
-.img-header {
-  width: 100%;
-  max-width: 400px;
-  filter: drop-shadow(0 0 20px var(--calipso)) drop-shadow(0 0 35px var(--fucsia));
-  animation: float 5s ease-in-out infinite;
+@keyframes moveParticle {
+  0% { transform: translate(0,0) scale(1); }
+  25% { transform: translate(20px,-30px) scale(1.3); }
+  50% { transform: translate(-25px,20px) scale(0.8); }
+  75% { transform: translate(15px,25px) scale(1.2); }
+  100% { transform: translate(-20px,-25px) scale(1); }
 }
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
+@keyframes glowParticle {
+  0% { box-shadow: 0 0 4px var(--accent-1); }
+  50% { box-shadow: 0 0 12px var(--accent-2); }
+  100% { box-shadow: 0 0 4px var(--accent-1); }
 }
-
 .card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(168, 85, 247, 0.3);
-  padding: 25px;
-  border-radius: 20px;
-  margin-bottom: 30px;
-  backdrop-filter: blur(12px);
-  animation: cardGlow 6s ease-in-out infinite;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  padding: 22px 20px;
+  margin: 26px auto;
+  max-width: 900px;
+  backdrop-filter: blur(10px);
 }
-
-@keyframes cardGlow {
-  0% { box-shadow: 0 0 10px rgba(34,211,238,0.2); }
-  50% { box-shadow: 0 0 25px rgba(236,72,153,0.4); }
-  100% { box-shadow: 0 0 10px rgba(34,211,238,0.2); }
-}
-
-.img-portfolio {
-  border-radius: 15px;
-  border: 2px solid var(--calipso);
-  box-shadow: 0 0 18px rgba(34, 211, 238, 0.4);
-  margin: 20px auto;
-  max-width: 100%;
-}
-
-.img-acred {
-  max-width: 220px;
-  border-radius: 50%;
-  box-shadow: 0 0 18px rgba(34,211,238,0.6);
-  animation: float 5s ease-in-out infinite;
-}
-
 .btn {
   display: block;
   width: 100%;
-  padding: 12px 16px;
-  margin-top: 8px;
-  border-radius: 10px;
-  font-size: 0.82rem;
+  max-width: 360px;
+  margin: 10px auto;
+  padding: 14px;
+  border-radius: 12px;
   text-decoration: none;
-  color: white;
-  background: linear-gradient(135deg, var(--calipso), var(--morado-neon));
-  font-weight: 600;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.6px;
-  transition: 0.25s ease;
-}
-
-.btn:hover {
-  filter: brightness(1.2);
-  box-shadow: 0 0 14px var(--fucsia);
-  transform: scale(1.02);
-}
-
-.btn-contact {
-  display: block;
-  width: 100%;
-  padding: 18px;
-  margin-top: 14px;
-  border-radius: 50px;
-  text-decoration: none;
-  color: white;
+  color: #fff;
   font-weight: 700;
   text-align: center;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  background: rgba(255, 255, 255, 0.04);
-  border: 2px solid transparent;
-  background-image:
-    linear-gradient(#1a0b2e, #1a0b2e),
-    linear-gradient(120deg, var(--calipso), var(--fucsia), var(--morado-neon));
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
-  box-shadow: 0 0 18px rgba(34, 211, 238, 0.4);
-  backdrop-filter: blur(12px);
-  animation: floatBtn 4s ease-in-out infinite, pulseGlow 3s ease-in-out infinite;
-  transition: 0.35s ease;
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  transition: 0.3s ease;
+  border: none;
 }
-
-@keyframes floatBtn {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+.btn:hover {
+  transform: scale(1.04);
+  filter: brightness(1.15);
 }
-
-@keyframes pulseGlow {
-  0% { box-shadow: 0 0 12px rgba(34, 211, 238, 0.4); }
-  50% { box-shadow: 0 0 28px rgba(236, 72, 153, 0.7); }
-  100% { box-shadow: 0 0 12px rgba(34, 211, 238, 0.4); }
-}
-
-.section-label {
-  color: var(--calipso);
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-  display: block;
-  text-transform: uppercase;
-}
-
-.whatsapp-float {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  background: #25D366;
-  color: white;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
+.btn-voz {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 32px;
-  text-decoration: none;
-  box-shadow: 0 0 20px #25D366;
-  z-index: 1500;
+  gap: 8px;
+  margin: 20px 8px 10px 0;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  border: 1px solid rgba(255,255,255,0.3);
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 0 10px var(--accent-1);
 }
-
-footer {
+.btn-voz:hover {
+  transform: scale(1.05);
+  filter: brightness(1.15);
+}
+.voice-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin: 10px auto 0;
+}
+.main-title {
   text-align: center;
-  padding: 25px;
-  margin-top: 40px;
-  color: var(--calipso);
-  opacity: 0.8;
-  font-size: 0.9rem;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: 90px;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 1.9rem;
+}
+.fila-imagenes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin: 30px auto;
+  flex-wrap: wrap;
+  max-width: 900px;
+}
+.img-animada {
+  width: 260px;
+  max-width: 90%;
+  display: block;
+  animation: flotar 6s infinite ease-in-out,
+             pulso 3s infinite ease-in-out,
+             vibracion 8s infinite ease-in-out;
+  filter: drop-shadow(0 0 12px var(--accent-1));
+  transition: transform 0.3s ease, filter 0.3s ease;
+  margin: 16px auto;
+  transform-style: preserve-3d;
+}
+.img-portada {
+  width: 100%;
+  max-width: 900px;
+  display: block;
+  margin: 40px auto 10px;
+  animation: flotar 6s infinite ease-in-out,
+             pulso 3s infinite ease-in-out;
+  filter: drop-shadow(0 0 18px var(--accent-1));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+@keyframes flotar {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+@keyframes pulso {
+  0% { filter: drop-shadow(0 0 6px var(--accent-1)); }
+  50% { filter: drop-shadow(0 0 16px var(--accent-2)); }
+  100% { filter: drop-shadow(0 0 6px var(--accent-1)); }
+}
+@keyframes vibracion {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(0.4deg); }
+  50% { transform: rotate(-0.4deg); }
+  75% { transform: rotate(0.3deg); }
+  100% { transform: rotate(0deg); }
 }
 </style>
 </head>
 <body>
 
-<div id="particles-js"></div>
-
-<div class="toggle-container">
-  <div id="toggleChip" class="toggle-chip">NEON ON</div>
+<div class="access-bar">
+  <button class="access-btn" id="toggle-contrast">Alto contraste</button>
+  <button class="access-btn" id="toggle-motion">Reducir animaciones</button>
 </div>
 
-<main id="inicio">
+<div class="nebulosa"></div>
+
+<script>
+for (let i = 0; i < 180; i++) {
+  const p = document.createElement("div");
+  p.className = "particle";
+  p.style.top = Math.random() * 100 + "%";
+  p.style.left = Math.random() * 100 + "%";
+  p.style.animationDelay = (Math.random() * 5) + "s";
+  document.body.appendChild(p);
+}
+document.getElementById("toggle-contrast").onclick = () =>
+  document.body.classList.toggle("high-contrast");
+document.getElementById("toggle-motion").onclick = () => {
+  const animated = document.querySelectorAll(".img-animada, .particle, .nebulosa, .img-portada");
+  animated.forEach(el => {
+    el.style.animationPlayState =
+      el.style.animationPlayState === "paused" ? "running" : "paused";
+  });
+};
+</script>
+
+<main id="main-content">
 
 <h1 class="main-title">Melissa Zamorano Levy – Salud Digital</h1>
 
-<!-- FOTO IZQUIERDA + BANNER -->
-<div class="header-flex">
-  <img src="img/foto-evy.png" class="foto-evy" alt="Foto profesional de Melissa Zamorano">
-  <img src="img/banner-ovalado.png" class="img-header" alt="Banner futurista Melissa Zamorano">
-</div>
+<!-- VOZ -->
+<section class="card">
+  <h2>Accesibilidad de lectura</h2>
+  <p>Activa la lectura en voz alta del contenido.</p>
+  <div class="voice-controls">
+    <button id="voz-play" class="btn-voz">🔊 Leer</button>
+    <button id="voz-pause" class="btn-voz" disabled>⏸ Pausar</button>
+    <button id="voz-resume" class="btn-voz" disabled>▶ Reanudar</button>
+    <button id="voz-stop" class="btn-voz" disabled>⏹ Detener</button>
+  </div>
+</section>
 
 <!-- PRESENTACIÓN -->
-<span class="section-label">Presentación</span>
-<div class="card">
-  <h2 class="text-holo">Melissa Zamorano Levy</h2>
+<section class="card">
+  <h2>Presentación</h2>
+  <p><strong>Tecnóloga en Informática Biomédica y Técnico Superior de Enfermería</strong>, con 16 años de trayectoria clínica y una formación híbrida que integra experiencia asistencial con competencias avanzadas en Salud Digital.</p>
+  <p>Especializada en soporte funcional HIS (TrakCare), interoperabilidad, RCE y gestión de incidencias críticas.</p>
+  <p>Experiencia en instituciones públicas y privadas, actuando como enlace entre equipos clínicos y TI.</p>
+  <p>Formación en Evaluación de Proyectos TI con enfoque clínico-operativo.</p>
+  <a href="docs/cv-melissa-zamorano-levy.pdf" class="btn" download>✔ Descargar CV Completo</a>
+</section>
 
-  <p><b>Tecnóloga en Informática Biomédica</b> y <b>Técnico Superior de Enfermería</b>, con 16 años de trayectoria clínica y una formación híbrida que integra experiencia asistencial con competencias avanzadas en Salud Digital.</p>
+<!-- IMÁGENES -->
+<section class="fila-imagenes">
+  <img src="img/foto-evy.png" class="img-animada" alt="Foto profesional">
+  <img src="img/banner-ovalado.png" class="img-animada" alt="Banner futurista">
+</section>
 
-  <p>Especializada en <b>soporte funcional HIS (TrakCare)</b>, <b>interoperabilidad</b>, <b>RCE</b> y <b>gestión de incidencias críticas</b>, asegurando continuidad operativa en entornos de alta demanda.</p>
-
-  <p>Experiencia en instituciones <b>públicas y privadas</b>, actuando como enlace entre <b>equipos clínicos y TI</b> para fortalecer la adopción digital, mejorar flujos asistenciales y optimizar procesos con foco en seguridad del paciente y calidad de datos.</p>
-
-  <p>Complemento mi perfil con formación en <b>Evaluación de Proyectos TI</b>, lo que me permite analizar soluciones digitales desde una mirada integral —clínica, operativa y funcional— garantizando implementaciones eficientes, seguras y alineadas con las necesidades reales de los equipos asistenciales.</p>
-
-  <a class="btn" href="docs/cv-melissa-zamorano.pdf" download target="_blank">✔ Descargar CV Completo</a>
-</div>
-
-<!-- VISUALIZACIÓN -->
-<span class="section-label">Visualización de Sistemas</span>
-<div class="card">
-  <h3 class="text-holo">Ecosistema Health Digital Tech</h3>
-  <img src="img/img_web.png" class="img-portfolio" alt="Dashboard Health Digital Tech">
-</div>
+<!-- PORTADA -->
+<section>
+  <img src="img/img_web.png" class="img-portada" alt="Portada futurista del sitio">
+</section>
 
 <!-- INFORMÁTICA BIOMÉDICA -->
-<span class="section-label">Informática Biomédica</span>
-<div class="card">
-  <h3 class="text-holo">Informática Biomédica</h3>
+<section class="card">
+  <h2>Informática Biomédica</h2>
   <ul>
-    <li>Implementación y soporte funcional HIS.</li>
+    <li>Implementación y soporte funcional HIS (TrakCare).</li>
     <li>Gestión de incidencias y continuidad operativa.</li>
     <li>Optimización de flujos clínicos.</li>
-    <li>Calidad y trazabilidad de datos clínicos.</li>
     <li>Interoperabilidad (HL7, FHIR, SNOMED CT).</li>
+    <li>Calidad y trazabilidad de datos clínicos.</li>
     <li>Capacitación y adopción digital.</li>
-    <li>Evaluación de proyectos TI.</li>
+    <li>Evaluación de proyectos TI (VAN, TIR, riesgos).</li>
   </ul>
-</div>
+  <a href="docs/titulo-tecnologa.pdf" class="btn" download>📄 Descargar Título Tecnóloga</a>
+</section>
 
-<!-- TENS -->
-<span class="section-label">Técnico Superior de Enfermería (TENS)</span>
-<div class="card">
-  <h3 class="text-holo">TENS</h3>
+<!-- TENS (DEBAJO DE INFORMÁTICA BIOMÉDICA) -->
+<section class="card">
+  <h2>Técnico en Enfermería</h2>
   <ul>
     <li>Administración de medicamentos.</li>
     <li>Signos vitales y registros.</li>
     <li>Curaciones simples y avanzadas.</li>
     <li>Cuidados respiratorios.</li>
-    <li>Manejo de traqueostomía.</li>
-    <li>Manejo de colostomía.</li>
+    <li>Manejo de traqueostomía y colostomía.</li>
     <li>Alimentación asistida.</li>
     <li>Vacunación particular y a domicilio.</li>
   </ul>
+  <a href="docs/titulo-tens.pdf" class="btn" download>📄 Descargar Título TENS</a>
+  <a href="docs/registro-prestador.pdf" class="btn" download>📄 Registro de Prestador</a>
+</section>
 
-  <a class="btn" href="docs/titulo-tens.pdf" download target="_blank">✔ Descargar Título Técnico Superior de Enfermería</a>
-  <a class="btn" href="docs/registro-prestadores.pdf" download target="_blank">✔ Descargar Registro de Prestador de Salud</a>
-</div>
+<!-- EVALUACIÓN DE PROYECTOS TI -->
+<section class="card">
+  <h2>Evaluación de Proyectos TI</h2>
+  <p>Evaluación de viabilidad mediante VAN, TIR, flujos de caja y análisis de riesgos.</p>
+  <img src="img/insignia-epti.png" class="img-animada" alt="Insignia EPTI">
+  <a href="docs/certificado-epti.pdf" class="btn" download>📄 Certificado EPTI</a>
 
-<!-- TÍTULOS -->
-<span class="section-label">Títulos & Certificados</span>
-<div class="card">
-  <h3 class="text-holo">Títulos & Certificados</h3>
-
-  <ul style="list-style:none; padding-left:0; line-height:1.8;">
-    <li>✔ Tecnóloga en Informática Biomédica — DUOC UC</li>
-    <li>✔ Técnico Superior de Enfermería — DUOC UC</li>
-    <li>✔ Evaluación de Proyectos TI — Pontificia Universidad Católica de Chile</li>
+  <h3 style="color:var(--review-title); font-weight:700;">Reseñas Profesionales</h3>
+  <ul style="color:var(--review-text); font-weight:500;">
+    <li>“Capacidad para resolver incidencias HIS con rapidez y claridad.”</li>
+    <li>“Dominio de TrakCare y continuidad operativa.”</li>
+    <li>“Excelente en capacitación y comunicación clínica.”</li>
+    <li>“Visión híbrida clínico–tecnológica.”</li>
   </ul>
-
-  <a class="btn" href="docs/titulo-tecnologa.pdf" download target="_blank">✔ Descargar Título Tecnóloga en Informática Biomédica</a>
-  <a class="btn" href="docs/titulo-tens.pdf" download target="_blank">✔ Descargar Título Técnico Superior de Enfermería</a>
-  <a class="btn" href="docs/certificado-epti.pdf" download target="_blank">✔ Descargar Certificado Evaluación de Proyectos TI</a>
-  <a class="btn" href="docs/registro-prestadores.pdf" download target="_blank">✔ Descargar Registro de Prestador de Salud</a>
-  <a class="btn" href="docs/cv-melissa-zamorano.pdf" download target="_blank">✔ Descargar CV Completo</a>
-</div>
-
-<!-- ACREDITACIÓN -->
-<div class="card" style="text-align:center;">
-  <img src="img/acreditada.png" class="img-acred" alt="Acreditación en calidad de procesos de atención en salud">
-</div>
+</section>
 
 <!-- CERTIFICADOS OPS -->
-<span class="section-label">Certificados Internacionales OPS/PAHO</span>
-<div class="card">
-  <h3 class="text-holo">Certificados Internacionales</h3>
-
-  <ul style="list-style:none; padding-left:0; line-height:1.8;">
-    <li>✔ Interoperabilidad & FHIR</li>
-    <li>✔ CIE‑11</li>
-    <li>✔ Monitoreo y Evaluación APS</li>
-    <li>✔ Higiene de Manos (COVID‑19)</li>
-    <li>✔ Prevención y Control de Infecciones</li>
-    <li>✔ Sistemas de Información en Salud</li>
+<section class="card">
+  <h2>Certificados OPS / PAHO</h2>
+  <ul>
+    <li>Interoperabilidad & FHIR</li>
+    <li>CIE‑11</li>
+    <li>Monitoreo APS</li>
+    <li>Higiene de Manos</li>
+    <li>Prevención de Infecciones</li>
+    <li>Sistemas de Información en Salud</li>
   </ul>
 
-  <a class="btn" href="docs/interoperabilidadfhir.pdf" download target="_blank">✔ Descargar Interoperabilidad & FHIR</a>
-  <a class="btn" href="docs/cie-11.pdf" download target="_blank">✔ Descargar CIE‑11</a>
-  <a class="btn" href="docs/monitoreoaps.pdf" download target="_blank">✔ Descargar Monitoreo y Evaluación APS</a>
-  <a class="btn" href="docs/higienemanos.pdf" download target="_blank">✔ Descargar Higiene de Manos</a>
-  <a class="btn" href="docs/prevencioninfecciones.pdf" download target="_blank">✔ Descargar Prevención y Control de Infecciones</a>
-  <a class="btn" href="docs/sistemasinformacionsalud.pdf" download target="_blank">✔ Descargar Sistemas de Información en Salud</a>
-</div>
-<!-- RESEÑAS -->
-<span class="section-label">Reseñas Profesionales</span>
-<div class="card">
-  <h3 class="text-holo">Reseñas</h3>
-
-  <p>“Melissa destaca por su capacidad para resolver incidencias como consultor funcional HIS con rapidez y claridad, siempre manteniendo una comunicación efectiva con los equipos clínicos.”</p>
-  <p>“Su dominio de TrakCare y su enfoque en continuidad operativa han sido clave para mejorar los flujos clínicos en nuestro servicio.”</p>
-  <p>“Excelente en capacitación: explica procesos complejos de forma simple, logrando una adopción digital real en equipos multidisciplinarios.”</p>
-  <p>“Su visión híbrida clínico–tecnológica aporta un valor único en proyectos de Salud Digital, especialmente en la <b>evaluación y validación de proyectos TI</b>.”</p>
-</div>
+  <a href="docs/interoperabilidadfhir.pdf" class="btn" download>📄 Interoperabilidad & FHIR</a>
+  <a href="docs/cie-11.pdf" class="btn" download>📄 CIE‑11</a>
+  <a href="docs/monitoreoaps.pdf" class="btn" download>📄 Monitoreo APS</a>
+  <a href="docs/higienemanos.pdf" class="btn" download>📄 Higiene de Manos</a>
+  <a href="docs/prevencioninfecciones.pdf" class="btn" download>📄 Prevención de Infecciones</a>
+  <a href="docs/sistemasinformacionsalud.pdf" class="btn" download>📄 Sistemas de Información en Salud</a>
+</section>
 
 <!-- CONTACTO -->
-<span class="section-label" id="contacto">Contacto Profesional</span>
-<div class="card">
-  <p style="text-align:center; color:var(--calipso); font-size:1rem; margin-bottom:20px;">
-    Para coordinación, soporte o consultas profesionales:
-  </p>
-
-  <a class="btn-contact" href="mailto:melissazamoranolevy34@gmail.com">
-    ✉️ Email Profesional
-  </a>
-
-  <a class="btn-contact" href="https://wa.me/56958758398" target="_blank">
-    📱 WhatsApp Directo
-  </a>
-
-  <a class="btn-contact" href="https://www.linkedin.com/in/melissa-z-7713a4217" target="_blank">
-    🔗 LinkedIn Profesional
-  </a>
-</div>
-
-<footer>
-  © 2026 Melissa Zamorano Levy · Salud Digital & Informática Biomédica
-</footer>
+<section class="card">
+  <h2>Contacto</h2>
+  <a href="mailto:melissazamoranolevy34@gmail.com" class="btn">✉️ Email Profesional</a>
+  <a href="https://wa.me/56958758398" class="btn">📱 WhatsApp</a>
+  <a href="https://www.linkedin.com/in/melissa-z-7713a4217" class="btn">🔗 LinkedIn</a>
+</section>
 
 </main>
 
-<a class="whatsapp-float" href="https://wa.me/56958758398" target="_blank">💬</a>
-
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-
+<!-- VOZ RÁPIDA -->
 <script>
-particlesJS("particles-js", {
-  "particles": {
-    "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
-    "color": { "value": ["#22d3ee", "#ec4899", "#a855f7"] },
-    "shape": { "type": "circle" },
-    "opacity": { "value": 0.5, "random": true },
-    "size": { "value": 3, "random": true },
-    "line_linked": { "enable": true, "distance": 150, "color": "#22d3ee", "opacity": 0.3, "width": 1 },
-    "move": { "enable": true, "speed": 2, "direction": "none", "out_mode": "out" }
-  },
-  "interactivity": {
-    "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": false }, "resize": true },
-    "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 0.5 } } }
-  },
-  "retina_detect": true
+let synth = window.speechSynthesis;
+let voces = [];
+let speaking = false;
+let paused = false;
+let colaUtterances = [];
+
+const palabrasIngles = ["HIS","TrakCare","FHIR","SNOMED","HL7","RCE","ITIL","digital","web","server","cloud","data","analytics"];
+
+function cargarVoces() { voces = synth.getVoices(); }
+speechSynthesis.onvoiceschanged = cargarVoces;
+
+function vozFemenina(langPrefix) {
+  const candidatas = voces.filter(v => v.lang.toLowerCase().startsWith(langPrefix.toLowerCase()));
+  const femeninas = candidatas.filter(v =>
+    v.name.toLowerCase().includes("female") ||
+    v.name.toLowerCase().includes("mujer") ||
+    v.name.toLowerCase().includes("woman")
+  );
+  return femeninas[0] || candidatas[0] || voces[0];
+}
+
+const btnPlay = document.getElementById("voz-play");
+const btnPause = document.getElementById("voz-pause");
+const btnResume = document.getElementById("voz-resume");
+const btnStop = document.getElementById("voz-stop");
+
+function actualizarControles() {
+  btnPlay.disabled = speaking;
+  btnPause.disabled = !speaking || paused;
+  btnResume.disabled = !paused;
+  btnStop.disabled = !speaking;
+}
+
+btnPlay.addEventListener("click", () => {
+  const main = document.getElementById("main-content");
+  if (!main) return;
+
+  synth.cancel();
+  colaUtterances = [];
+  speaking = true;
+  paused = false;
+  actualizarControles();
+
+  const texto = main.innerText.replace(/\s+/g, " ").trim().split(" ");
+
+  texto.forEach(palabra => {
+    const limpio = palabra.replace(/[^a-zA-Z0-9]/g, "");
+    const u = new SpeechSynthesisUtterance(palabra + " ");
+
+    if (palabrasIngles.includes(limpio)) {
+      u.voice = vozFemenina("en");
+      u.lang = "en-US";
+      u.rate = 1.35;
+      u.pitch = 1.05;
+    } else {
+      u.voice = vozFemenina("es");
+      u.lang = "es-CL";
+      u.rate = 1.55;
+      u.pitch = 1.05;
+    }
+
+    u.onend = () => {
+      if (!synth.speaking && !paused) {
+        speaking = false;
+        actualizarControles();
+      }
+    };
+
+    colaUtterances.push(u);
+  });
+
+  colaUtterances.forEach(u => synth.speak(u));
 });
 
-const toggleChip = document.getElementById('toggleChip');
-toggleChip.addEventListener('click', () => {
-  document.body.classList.toggle('no-anim');
-  const isOff = document.body.classList.contains('no-anim');
-  toggleChip.textContent = isOff ? 'NEON OFF' : 'NEON ON';
-  toggleChip.classList.toggle('off', isOff);
+btnPause.addEventListener("click", () => {
+  if (!speaking || paused) return;
+  synth.pause();
+  paused = true;
+  actualizarControles();
 });
+
+btnResume.addEventListener("click", () => {
+  if (!paused) return;
+  synth.resume();
+  paused = false;
+  speaking = true;
+  actualizarControles();
+});
+
+btnStop.addEventListener("click", () => {
+  synth.cancel();
+  speaking = false;
+  paused = false;
+  colaUtterances = [];
+  actualizarControles();
+});
+
+actualizarControles();
 </script>
 
 </body>
