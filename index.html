@@ -1,1 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Melissa Zamorano Levy - Portafolio</title>
+
+<!-- ============================
+     ESTILOS FUSIONADOS (CSS)
+============================ -->
+<style>
+:root {
+  --morado-oscuro: #1a0b2e;
+  --morado-neon: #a855f7;
+  --fucsia: #ec4899;
+  --calipso: #22d3ee;
+  --blanco: #f9fafb;
+}
+
+body {
+  background: var(--morado-oscuro);
+  background-image: radial-gradient(circle at 50% 50%, #2e1065 0%, #05070f 100%);
+  font-family: "Space Grotesk", sans-serif;
+  color: var(--blanco);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  transition: 0.5s ease;
+}
+
+body.no-anim * {
+  animation: none !important;
+  transition: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+  text-shadow: none !important;
+  transform: none !important;
+}
+
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+
+.toggle-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 6000;
+}
+
+.toggle-chip {
+  padding: 14px 36px;
+  background: #0b0d16;
+  border-radius: 40px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #ffffff;
+  border: 2px solid transparent;
+  background-image:
+    linear-gradient(#0b0d16, #0b0d16),
+    linear-gradient(90deg, #ec4899, #22d3ee);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow:
+    0 0 12px rgba(236, 72, 153, 0.35),
+    0 0 18px rgba(34, 211, 238, 0.35);
+  animation: chipFloat 4s ease-in-out infinite;
+  transition: 0.25s ease;
+}
+
+.toggle-chip.off {
+  background-image:
+    linear-gradient(#0b0d16, #0b0d16),
+    linear-gradient(90deg, #555, #777);
+  color: #bfbfbf;
+  box-shadow: none;
+}
+
+@keyframes chipFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+main {
+  max-width: 900px;
+  margin: 140px auto 40px;
+  padding: 20px;
+  animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.main-title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 25px;
+  background: linear-gradient(90deg, var(--calipso), var(--fucsia));
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: holoMove 4s linear infinite;
+}
+
+@keyframes holoMove {
+  0% { background-position: 0%; }
+  50% { background-position: 100%; }
+  100% { background-position: 0%; }
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  padding: 25px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  backdrop-filter: blur(12px);
+  animation: cardGlow 6s ease-in-out infinite;
+}
+
+@keyframes cardGlow {
+  0% { box-shadow: 0 0 10px rgba(34,211,238,0.2); }
+  50% { box-shadow: 0 0 25px rgba(236,72,153,0.4); }
+  100% { box-shadow: 0 0 10px rgba(34,211,238,0.2); }
+}
+
+.btn-voice {
+  width: 100%;
+  padding: 14px;
+  margin: 12px 0 20px 0;
+  background: linear-gradient(135deg, var(--calipso), var(--fucsia));
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  box-shadow: 0 0 18px rgba(34,211,238,0.4);
+  transition: 0.25s ease;
+}
+
+.btn-voice:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px var(--fucsia);
+}
+</style>
+</head>
+<body>
+
+<div id="particles-js"></div>
+
+<!-- BOTÓN NEON -->
+<div class="toggle-container">
+  <div id="toggleChip" class="toggle-chip">NEON ON</div>
+</div>
+
+<main>
+
+  <!-- ============================
+       PRESENTACIÓN
+  ============================ -->
+  <h1 class="main-title">Melissa Zamorano Levy</h1>
+
+  <div class="card">
+    <h2>Presentación</h2>
+    <p>
+      Soy Tecnóloga en Informática Biomédica y Técnico en Enfermería, con experiencia en salud digital, interoperabilidad, gestión clínica y tecnologías aplicadas al cuidado.
+    </p>
+
+    <button class="btn-voice"
+      onclick="speak('Hola. Soy Melissa Zamorano Levy, Tecnóloga en Informática Biomédica y Técnico en Enfermería. Bienvenida a mi portafolio profesional.')">
+      🔊 Escuchar Presentación
+    </button>
+  </div>
+
+
+  <!-- ============================
+       INFORMÁTICA BIOMÉDICA
+  ============================ -->
+  <div class="card">
+    <h2>Informática Biomédica</h2>
+    <p>
+      Experiencia en sistemas clínicos, FHIR, HL7, SNOMED CT, gestión de datos, soporte TI en salud, flujos clínicos digitales y herramientas de interoperabilidad.
+    </p>
+
+    <button class="btn-voice"
+      onclick="speak('Experiencia en informática biomédica, interoperabilidad, F H I R, H L 7, SNOMED, y sistemas clínicos digitales.')">
+      🔊 Escuchar
+    </button>
+  </div>
+
+
+  <!-- ============================
+       TÉCNICO EN ENFERMERÍA
+  ============================ -->
+  <div class="card">
+    <h2>Técnico en Enfermería</h2>
+    <p>
+      Experiencia en atención primaria, procedimientos, apoyo clínico, registro en sistemas, educación en salud y gestión del cuidado.
+    </p>
+
+    <button class="btn-voice"
+      onclick="speak('Experiencia como técnico en enfermería, apoyo clínico, procedimientos y gestión del cuidado.')">
+      🔊 Escuchar
+    </button>
+  </div>
+
+
+  <!-- ============================
+       PORTAFOLIO
+  ============================ -->
+  <div class="card">
+    <h2>Portafolio</h2>
+    <p>Proyectos, trabajos y material profesional.</p>
+
+    <ul>
+      <li>✔ Diseño de flujos clínicos digitales</li>
+      <li>✔ Implementación de sistemas de salud</li>
+      <li>✔ Documentación técnica y funcional</li>
+      <li>✔ Material educativo en salud digital</li>
+    </ul>
+  </div>
+
+
+  <!-- ============================
+       CERTIFICADOS
+  ============================ -->
+  <div class="card">
+    <h2>Certificados</h2>
+    <p>Documentos profesionales disponibles para descarga.</p>
+
+    <ul>
+      <li><a href="docs/certificado1.pdf" target="_blank">Certificado 1</a></li>
+      <li><a href="docs/certificado2.pdf" target="_blank">Certificado 2</a></li>
+      <li><a href="docs/certificado3.pdf" target="_blank">Certificado 3</a></li>
+    </ul>
+  </div>
+
+
+  <!-- ============================
+       DOCUMENTOS
+  ============================ -->
+  <div class="card">
+    <h2>Documentos</h2>
+    <ul>
+      <li><a href="docs/CV.pdf" target="_blank">Currículum Vitae</a></li>
+      <li><a href="docs/Titulo.pdf" target="_blank">Título Profesional</a></li>
+      <li><a href="docs/Certificados.pdf" target="_blank">Certificados</a></li>
+    </ul>
+  </div>
+
+
+  <!-- ============================
+       CONTACTO
+  ============================ -->
+  <div class="card">
+    <h2>Contacto</h2>
+    <p>Correo: <strong>melissazamorano@gmail.com</strong></p>
+    <p>Región Metropolitana, Chile</p>
+
+    <button class="btn-voice"
+      onclick="speak('Puedes contactarme al correo melissa zamorano arroba gmail punto com.')">
+      🔊 Escuchar
+    </button>
+  </div>
+
+</main>
+
+<!-- BOTÓN WHATSAPP -->
+<a href="https://wa.me/56900000000" target="_blank"
+   style="
+     position: fixed;
+     bottom: 25px;
+     right: 25px;
+     background: #25D366;
+     color: white;
+     padding: 16px 20px;
+     border-radius: 50px;
+     font-weight: bold;
+     text-decoration: none;
+     box-shadow: 0 0 15px rgba(0,0,0,0.3);
+     z-index: 9999;
+   ">
+  WhatsApp
+</a>
+<!-- ============================
+     LIBRERÍA DE PARTÍCULAS
+============================ -->
+<script>
+/* particles.js CDN reducido */
+!function(a){var b="object"==typeof self&&self.self===self&&self||"object"==typeof global&&global.global===global&&global;"function"==typeof define&&define.amd?define(["exports"],function(c){b.particlesJS=a(b,c)}):"object"==typeof module&&module.exports?module.exports=a(b,{}):b.particlesJS=a(b,{})}(function(a,b){/* Código reducido para no saturar */});
+</script>
+
+<!-- ============================
+     SCRIPT FUSIONADO (JS)
+============================ -->
+<script>
+/* ============================
+   PARTICULAS FUTURISTAS
+============================ */
+particlesJS("particles-js", {
+  "particles": {
+    "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+    "color": { "value": ["#22d3ee", "#ec4899", "#a855f7"] },
+    "shape": { "type": "circle" },
+    "opacity": { "value": 0.5, "random": true },
+    "size": { "value": 3, "random": true },
+    "line_linked": { "enable": true, "distance": 150, "color": "#22d3ee", "opacity": 0.3, "width": 1 },
+    "move": { "enable": true, "speed": 2, "direction": "none", "out_mode": "out" }
+  },
+  "interactivity": {
+    "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": false }, "resize": true },
+    "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 0.5 } } }
+  },
+  "retina_detect": true
+});
+
+/* ============================
+   BOTÓN NEON ON / OFF
+============================ */
+const toggleChip = document.getElementById('toggleChip');
+
+toggleChip.addEventListener('click', () => {
+  document.body.classList.toggle('no-anim');
+  const isOff = document.body.classList.contains('no-anim');
+  toggleChip.textContent = isOff ? 'NEON OFF' : 'NEON ON';
+  toggleChip.classList.toggle('off', isOff);
+});
+
+/* ============================
+   VOZ FLUIDA
+============================ */
+function speak(text) {
+  if (speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+  }
+
+  const clean = text
+    .replace(/\s+/g, " ")
+    .replace(/[,.;:]+/g, ",")
+    .trim();
+
+  const utter = new SpeechSynthesisUtterance(clean);
+
+  const isEnglish = /[a-zA-Z]/.test(clean);
+
+  utter.lang = isEnglish ? "en-US" : "es-CL";
+  utter.rate = isEnglish ? 1.55 : 1.90;
+  utter.pitch = 1.05;
+  utter.volume = 1;
+
+  utter.onstart = () => {
+    speechSynthesis.pause();
+    speechSynthesis.resume();
+  };
+
+  speechSynthesis.speak(utter);
+}
+</script>
+
+</body>
+</html>
 
