@@ -3,12 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Melissa Zamorano Levy - Portafolio</title>
+<title>Melissa Zamorano – Salud Digital</title>
 
-<!-- ============================
-     ESTILOS FUSIONADOS (CSS)
-============================ -->
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
+/* ============================
+   VARIABLES
+============================ */
 :root {
   --morado-oscuro: #1a0b2e;
   --morado-neon: #a855f7;
@@ -17,6 +19,9 @@
   --blanco: #f9fafb;
 }
 
+/* ============================
+   ESTILOS BASE
+============================ */
 body {
   background: var(--morado-oscuro);
   background-image: radial-gradient(circle at 50% 50%, #2e1065 0%, #05070f 100%);
@@ -37,6 +42,9 @@ body.no-anim * {
   transform: none !important;
 }
 
+/* ============================
+   PARTICULAS
+============================ */
 #particles-js {
   position: fixed;
   width: 100%;
@@ -46,6 +54,9 @@ body.no-anim * {
   left: 0;
 }
 
+/* ============================
+   BOTÓN NEON
+============================ */
 .toggle-container {
   position: fixed;
   top: 20px;
@@ -88,6 +99,9 @@ body.no-anim * {
   50% { transform: translateY(-6px); }
 }
 
+/* ============================
+   CONTENIDO
+============================ */
 main {
   max-width: 900px;
   margin: 140px auto 40px;
@@ -117,6 +131,46 @@ main {
   100% { background-position: 0%; }
 }
 
+.header-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+/* ============================
+   IMÁGENES EN MOVIMIENTO
+============================ */
+.foto-evy,
+.img-header,
+.img-portfolio,
+.img-acred {
+  animation: float2 6s ease-in-out infinite, neonPulse 4s ease-in-out infinite;
+}
+
+@keyframes float2 {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-12px) scale(1.03); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+@keyframes neonPulse {
+  0% { filter: drop-shadow(0 0 10px var(--calipso)); }
+  50% { filter: drop-shadow(0 0 25px var(--fucsia)); }
+  100% { filter: drop-shadow(0 0 10px var(--calipso)); }
+}
+
+.foto-evy:hover,
+.img-header:hover,
+.img-portfolio:hover {
+  transform: scale(1.05) rotate(1deg);
+  transition: 0.4s ease;
+}
+
+/* ============================
+   TARJETAS
+============================ */
 .card {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(168, 85, 247, 0.3);
@@ -125,6 +179,12 @@ main {
   margin-bottom: 30px;
   backdrop-filter: blur(12px);
   animation: cardGlow 6s ease-in-out infinite;
+  transition: all 0.35s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px var(--calipso);
 }
 
 @keyframes cardGlow {
@@ -133,29 +193,112 @@ main {
   100% { box-shadow: 0 0 10px rgba(34,211,238,0.2); }
 }
 
-.btn-voice {
-  width: 100%;
-  padding: 14px;
-  margin: 12px 0 20px 0;
-  background: linear-gradient(135deg, var(--calipso), var(--fucsia));
-  border: none;
-  border-radius: 12px;
-  color: white;
-  font-weight: 700;
-  font-size: 0.9rem;
-  cursor: pointer;
-  letter-spacing: 1px;
+.section-label {
+  color: var(--calipso);
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  display: block;
   text-transform: uppercase;
-  box-shadow: 0 0 18px rgba(34,211,238,0.4);
+}
+
+/* ============================
+   BOTONES
+============================ */
+.btn {
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  margin-top: 8px;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(135deg, var(--calipso), var(--morado-neon));
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
   transition: 0.25s ease;
 }
 
-.btn-voice:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 25px var(--fucsia);
+.btn:hover {
+  filter: brightness(1.2);
+  box-shadow: 0 0 14px var(--fucsia);
+  transform: scale(1.02);
+}
+
+.btn-contact {
+  display: block;
+  width: 100%;
+  padding: 18px;
+  margin-top: 14px;
+  border-radius: 50px;
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.04);
+  border: 2px solid transparent;
+  background-image:
+    linear-gradient(#1a0b2e, #1a0b2e),
+    linear-gradient(120deg, var(--calipso), var(--fucsia), var(--morado-neon));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: 0 0 18px rgba(34, 211, 238, 0.4);
+  backdrop-filter: blur(12px);
+  animation: floatBtn 4s ease-in-out infinite, pulseGlow 3s ease-in-out infinite;
+  transition: 0.35s ease;
+}
+
+@keyframes floatBtn {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 12px rgba(34, 211, 238, 0.4); }
+  50% { box-shadow: 0 0 28px rgba(236, 72, 153, 0.7); }
+  100% { box-shadow: 0 0 12px rgba(34, 211, 238, 0.4); }
+}
+
+/* ============================
+   WHATSAPP
+============================ */
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #25D366;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  text-decoration: none;
+  box-shadow: 0 0 20px #25D366;
+  z-index: 1500;
+}
+
+/* ============================
+   FOOTER
+============================ */
+footer {
+  text-align: center;
+  padding: 25px;
+  margin-top: 40px;
+  color: var(--calipso);
+  opacity: 0.8;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
 }
 </style>
 </head>
+
 <body>
 
 <div id="particles-js"></div>
@@ -165,182 +308,213 @@ main {
   <div id="toggleChip" class="toggle-chip">NEON ON</div>
 </div>
 
-<main>
+<main id="inicio">
 
-  <!-- ============================
-       PRESENTACIÓN
-  ============================ -->
-  <h1 class="main-title">Melissa Zamorano Levy</h1>
+<h1 class="main-title">Melissa Zamorano Levy – Salud Digital</h1>
 
-  <div class="card">
-    <h2>Presentación</h2>
-    <p>
-      Soy Tecnóloga en Informática Biomédica y Técnico en Enfermería, con experiencia en salud digital, interoperabilidad, gestión clínica y tecnologías aplicadas al cuidado.
-    </p>
+<!-- FOTO + BANNER -->
+<div class="header-flex">
+  <img src="img/foto-evy.png" class="foto-evy">
+  <img src="img/banner-ovalado.png" class="img-header">
+</div>
 
-    <button class="btn-voice"
-      onclick="speak('Hola. Soy Melissa Zamorano Levy, Tecnóloga en Informática Biomédica y Técnico en Enfermería. Bienvenida a mi portafolio profesional.')">
-      🔊 Escuchar Presentación
-    </button>
-  </div>
+<!-- PRESENTACIÓN -->
+<span class="section-label">Presentación</span>
+<div class="card">
+  <h2 class="text-holo">Melissa Zamorano Levy</h2>
 
+  <p><b>Tecnóloga en Informática Biomédica</b> y <b>Técnico Superior de Enfermería</b>, con 16 años de trayectoria clínica y una formación híbrida que integra experiencia asistencial con competencias avanzadas en Salud Digital.</p>
 
-  <!-- ============================
-       INFORMÁTICA BIOMÉDICA
-  ============================ -->
-  <div class="card">
-    <h2>Informática Biomédica</h2>
-    <p>
-      Experiencia en sistemas clínicos, FHIR, HL7, SNOMED CT, gestión de datos, soporte TI en salud, flujos clínicos digitales y herramientas de interoperabilidad.
-    </p>
+  <p>Especializada en <b>soporte funcional HIS (TrakCare)</b>, <b>interoperabilidad</b>, <b>RCE</b> y <b>gestión de incidencias críticas</b>, asegurando continuidad operativa en entornos de alta demanda.</p>
 
-    <button class="btn-voice"
-      onclick="speak('Experiencia en informática biomédica, interoperabilidad, F H I R, H L 7, SNOMED, y sistemas clínicos digitales.')">
-      🔊 Escuchar
-    </button>
-  </div>
+  <p>Experiencia en instituciones <b>públicas y privadas</b>, actuando como enlace entre <b>equipos clínicos y TI</b> para fortalecer la adopción digital, mejorar flujos asistenciales y optimizar procesos con foco en seguridad del paciente y calidad de datos.</p>
 
+  <p>Complemento mi perfil con formación en <b>Evaluación de Proyectos TI</b>, lo que me permite analizar soluciones digitales desde una mirada integral —clínica, operativa y funcional— garantizando implementaciones eficientes, seguras y alineadas con las necesidades reales de los equipos asistenciales.</p>
 
-  <!-- ============================
-       TÉCNICO EN ENFERMERÍA
-  ============================ -->
-  <div class="card">
-    <h2>Técnico en Enfermería</h2>
-    <p>
-      Experiencia en atención primaria, procedimientos, apoyo clínico, registro en sistemas, educación en salud y gestión del cuidado.
-    </p>
+  <a class="btn" href="docs/cv-melissa-zamorano.pdf" download>✔ Descargar CV Completo</a>
+</div>
 
-    <button class="btn-voice"
-      onclick="speak('Experiencia como técnico en enfermería, apoyo clínico, procedimientos y gestión del cuidado.')">
-      🔊 Escuchar
-    </button>
-  </div>
+<!-- VISUALIZACIÓN -->
+<span class="section-label">Visualización de Sistemas</span>
+<div class="card">
+  <h3 class="text-holo">Ecosistema Health Digital Tech</h3>
+  <img src="img/img_web.png" class="img-portfolio">
+</div>
 
+<!-- INFORMÁTICA BIOMÉDICA -->
+<span class="section-label">Informática Biomédica</span>
+<div class="card">
+  <h3 class="text-holo">Informática Biomédica</h3>
+  <ul>
+    <li>Implementación y soporte funcional HIS.</li>
+    <li>Gestión de incidencias y continuidad operativa.</li>
+    <li>Optimización de flujos clínicos.</li>
+    <li>Calidad y trazabilidad de datos clínicos.</li>
+    <li>Interoperabilidad (HL7, FHIR, SNOMED CT).</li>
+    <li>Capacitación y adopción digital.</li>
+    <li>Evaluación de proyectos TI.</li>
+  </ul>
+</div>
 
-  <!-- ============================
-       PORTAFOLIO
-  ============================ -->
-  <div class="card">
-    <h2>Portafolio</h2>
-    <p>Proyectos, trabajos y material profesional.</p>
+<!-- TENS -->
+<span class="section-label">Técnico Superior de Enfermería (TENS)</span>
+<div class="card">
+  <h3 class="text-holo">TENS</h3>
+  <ul>
+    <li>Administración de medicamentos.</li>
+    <li>Signos vitales y registros.</li>
+    <li>Curaciones simples y avanzadas.</li>
+    <li>Cuidados respiratorios.</li>
+    <li>Manejo de traqueostomía.</li>
+    <li>Manejo de colostomía.</li>
+    <li>Alimentación asistida.</li>
+    <li>Vacunación particular y a domicilio.</li>
+  </ul>
 
-    <ul>
-      <li>✔ Diseño de flujos clínicos digitales</li>
-      <li>✔ Implementación de sistemas de salud</li>
-      <li>✔ Documentación técnica y funcional</li>
-      <li>✔ Material educativo en salud digital</li>
-    </ul>
-  </div>
+  <a class="btn" href="docs/titulo-tens.pdf" download>✔ Descargar Título Técnico Superior de Enfermería</a>
+  <a class="btn" href="docs/registro-prestadores.pdf" download>✔ Descargar Registro de Prestador de Salud</a>
+</div>
 
+<!-- TÍTULOS -->
+<span class="section-label">Títulos & Certificados</span>
+<div class="card">
+  <h3 class="text-holo">Títulos & Certificados</h3>
 
-  <!-- ============================
-       CERTIFICADOS
-  ============================ -->
-  <div class="card">
-    <h2>Certificados</h2>
-    <p>Documentos profesionales disponibles para descarga.</p>
+  <ul style="list-style:none; padding-left:0; line-height:1.8;">
+    <li>✔ Tecnóloga en Informática Biomédica — DUOC UC</li>
+    <li>✔ Técnico Superior de Enfermería — DUOC UC</li>
+    <li>✔ Evaluación de Proyectos TI — Pontificia Universidad Católica de Chile</li>
+  </ul>
 
-    <ul>
-      <li><a href="docs/certificado1.pdf" target="_blank">Certificado 1</a></li>
-      <li><a href="docs/certificado2.pdf" target="_blank">Certificado 2</a></li>
-      <li><a href="docs/certificado3.pdf" target="_blank">Certificado 3</a></li>
-    </ul>
-  </div>
+  <a class="btn" href="docs/titulo-tecnologa.pdf" download>✔ Descargar Título Tecnóloga en Informática Biomédica</a>
+  <a class="btn" href="docs/titulo-tens.pdf" download>✔ Descargar Título Técnico Superior de Enfermería</a>
+  <a class="btn" href="docs/certificado-epti.pdf" download>✔ Descargar Certificado Evaluación de Proyectos TI</a>
+  <a class="btn" href="docs/registro-prestadores.pdf" download>✔ Descargar Registro de Prestador de Salud</a>
+  <a class="btn" href="docs/cv-melissa-zamorano.pdf" download>✔ Descargar CV Completo</a>
+</div>
 
+<!-- ACREDITACIÓN -->
+<div class="card" style="text-align:center;">
+  <img src="img/acreditada.png" class="img-acred">
+</div>
 
-  <!-- ============================
-       DOCUMENTOS
-  ============================ -->
-  <div class="card">
-    <h2>Documentos</h2>
-    <ul>
-      <li><a href="docs/CV.pdf" target="_blank">Currículum Vitae</a></li>
-      <li><a href="docs/Titulo.pdf" target="_blank">Título Profesional</a></li>
-      <li><a href="docs/Certificados.pdf" target="_blank">Certificados</a></li>
-    </ul>
-  </div>
+<!-- CERTIFICADOS OPS -->
+<span class="section-label">Certificados Internacionales OPS/PAHO</span>
+<div class="card">
+  <h3 class="text-holo">Certificados Internacionales</h3>
 
+  <ul style="list-style:none; padding-left:0; line-height:1.8;">
+    <li>✔ Interoperabilidad & FHIR</li>
+    <li>✔ CIE‑11</li>
+    <li>✔ Monitoreo y Evaluación APS</li>
+    <li>✔ Higiene de Manos (COVID‑19)</li>
+    <li>✔ Prevención y Control de Infecciones</li>
+    <li>✔ Sistemas de Información en Salud</li>
+  </ul>
 
-  <!-- ============================
-       CONTACTO
-  ============================ -->
-  <div class="card">
-    <h2>Contacto</h2>
-    <p>Correo: <strong>melissazamorano@gmail.com</strong></p>
-    <p>Región Metropolitana, Chile</p>
+  <a class="btn" href="docs/interoperabilidadfhir.pdf" download>✔ Descargar Interoperabilidad & FHIR</a>
+  <a class="btn" href="docs/cie-11.pdf" download>✔ Descargar CIE‑11</a>
+  <a class="btn" href="docs/monitoreoaps.pdf" download>✔ Descargar Monitoreo y Evaluación APS</a>
+  <a class="btn" href="docs/higienemanos.pdf" download>✔ Descargar Higiene de Manos</a>
+  <a class="btn" href="docs/prevencioninfecciones.pdf" download>✔ Descargar Prevención y Control de Infecciones</a>
+  <a class="btn" href="docs/sistemasinformacionsalud.pdf" download>✔ Descargar Sistemas de Información en Salud</a>
+</div>
 
-    <button class="btn-voice"
-      onclick="speak('Puedes contactarme al correo melissa zamorano arroba gmail punto com.')">
-      🔊 Escuchar
-    </button>
-  </div>
+<!-- RESEÑAS -->
+<span class="section-label">Reseñas Profesionales</span>
+<div class="card">
+  <h3 class="text-holo">Reseñas</h3>
+
+  <p>“Melissa destaca por su capacidad para resolver incidencias como consultor funcional HIS con rapidez y claridad, siempre manteniendo una comunicación efectiva con los equipos clínicos.”</p>
+  <p>“Su dominio de TrakCare y su enfoque en continuidad operativa han sido clave para mejorar los flujos clínicos en nuestro servicio.”</p>
+  <p>“Excelente en capacitación: explica procesos complejos de forma simple, logrando una adopción digital real en equipos multidisciplinarios.”</p>
+  <p>“Su visión híbrida clínico–tecnológica aporta un valor único en proyectos de Salud Digital, especialmente en la evaluación y validación de proyectos TI.”</p>
+</div>
+
+<!-- CONTACTO -->
+<span class="section-label" id="contacto">Contacto Profesional</span>
+<div class="card">
+  <p style="text-align:center; color:var(--calipso); font-size:1rem; margin-bottom:20px;">
+    Para coordinación, soporte o consultas profesionales:
+  </p>
+
+  <a class="btn-contact" href="mailto:melissazamoranolevy34@gmail.com">
+    ✉️ Email Profesional
+  </a>
+
+  <a class="btn-contact" href="https://wa.me/56958758398" target="_blank">
+    📱 WhatsApp Directo
+  </a>
+
+  <a class="btn-contact" href="https://www.linkedin.com/in/melissa-z-7713a4217" target="_blank">
+    🔗 LinkedIn Profesional
+  </a>
+</div>
+
+<footer>
+  © 2026 Melissa Zamorano Levy · Salud Digital & Informática Biomédica
+</footer>
 
 </main>
 
-<!-- BOTÓN WHATSAPP -->
-<a href="https://wa.me/56900000000" target="_blank"
-   style="
-     position: fixed;
-     bottom: 25px;
-     right: 25px;
-     background: #25D366;
-     color: white;
-     padding: 16px 20px;
-     border-radius: 50px;
-     font-weight: bold;
-     text-decoration: none;
-     box-shadow: 0 0 15px rgba(0,0,0,0.3);
-     z-index: 9999;
-   ">
-  WhatsApp
-</a>
-<!-- ============================
-     LIBRERÍA DE PARTÍCULAS
-============================ -->
-<script>
-/* particles.js CDN reducido */
-!function(a){var b="object"==typeof self&&self.self===self&&self||"object"==typeof global&&global.global===global&&global;"function"==typeof define&&define.amd?define(["exports"],function(c){b.particlesJS=a(b,c)}):"object"==typeof module&&module.exports?module.exports=a(b,{}):b.particlesJS=a(b,{})}(function(a,b){/* Código reducido para no saturar */});
-</script>
+<a class="whatsapp-float" href="https://wa.me/56958758398" target="_blank">💬</a>
 
-<!-- ============================
-     SCRIPT FUSIONADO (JS)
-============================ -->
+<!-- PARTICLES.JS CDN -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
 <script>
-/* ============================
-   PARTICULAS FUTURISTAS
-============================ */
+/* PARTICULAS FUTURISTAS MEJORADAS */
 particlesJS("particles-js", {
   "particles": {
-    "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+    "number": { "value": 120, "density": { "enable": true, "value_area": 900 } },
     "color": { "value": ["#22d3ee", "#ec4899", "#a855f7"] },
     "shape": { "type": "circle" },
-    "opacity": { "value": 0.5, "random": true },
-    "size": { "value": 3, "random": true },
-    "line_linked": { "enable": true, "distance": 150, "color": "#22d3ee", "opacity": 0.3, "width": 1 },
-    "move": { "enable": true, "speed": 2, "direction": "none", "out_mode": "out" }
+    "opacity": { "value": 0.6, "random": true },
+    "size": { "value": 4, "random": true },
+    "line_linked": {
+      "enable": true,
+      "distance": 140,
+      "color": "#22d3ee",
+      "opacity": 0.4,
+      "width": 1.2
+    },
+    "move": {
+      "enable": true,
+      "speed": 2.8,
+      "direction": "none",
+      "out_mode": "out"
+    }
   },
   "interactivity": {
-    "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": false }, "resize": true },
-    "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 0.5 } } }
+    "events": {
+      "onhover": { "enable": true, "mode": "grab" },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 180,
+        "line_linked": { "opacity": 0.7 }
+      }
+    }
   },
   "retina_detect": true
 });
 
-/* ============================
-   BOTÓN NEON ON / OFF
-============================ */
+/* BOTÓN NEON ON / OFF */
 const toggleChip = document.getElementById('toggleChip');
 
 toggleChip.addEventListener('click', () => {
   document.body.classList.toggle('no-anim');
-  const isOff = document.body.classList.contains('no-anim');
-  toggleChip.textContent = isOff ? 'NEON OFF' : 'NEON ON';
-  toggleChip.classList.toggle('off', isOff);
+  const off = document.body.classList.contains('no-anim');
+
+  toggleChip.textContent = off ? "NEON OFF" : "NEON ON";
+
+  toggleChip.style.filter = off
+    ? "grayscale(1) brightness(0.6)"
+    : "drop-shadow(0 0 12px var(--calipso)) drop-shadow(0 0 20px var(--fucsia))";
 });
 
-/* ============================
-   VOZ FLUIDA
-============================ */
+/* VOZ FLUIDA, RÁPIDA E INCLUSIVA */
 function speak(text) {
   if (speechSynthesis.speaking) {
     speechSynthesis.cancel();
@@ -353,16 +527,13 @@ function speak(text) {
 
   const utter = new SpeechSynthesisUtterance(clean);
 
-  const isEnglish = /[a-zA-Z]/.test(clean);
-
-  utter.lang = isEnglish ? "en-US" : "es-CL";
-  utter.rate = isEnglish ? 1.55 : 1.90;
-  utter.pitch = 1.05;
+  utter.lang = "es-CL";
+  utter.rate = 1.95;   // más rápida
+  utter.pitch = 1.15;  // más cálida
   utter.volume = 1;
 
   utter.onstart = () => {
-    speechSynthesis.pause();
-    speechSynthesis.resume();
+    setTimeout(() => speechSynthesis.resume(), 50);
   };
 
   speechSynthesis.speak(utter);
@@ -371,4 +542,5 @@ function speak(text) {
 
 </body>
 </html>
+
 
