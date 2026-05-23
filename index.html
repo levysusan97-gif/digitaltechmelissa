@@ -1,151 +1,611 @@
-<span class="section-label" aria-label="Sección de presentación profesional">Presentación</span>
-<div class="card" role="region" aria-labelledby="titulo-presentacion">
-  <h2 id="titulo-presentacion" class="text-holo">Melissa Zamorano Levy</h2>
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Melissa Zamorano – Salud Digital</title>
 
-  <button class="btn" onclick="speak('Presentación profesional. Melissa Zamorano Levy, Tecnóloga en Informática Biomédica y Técnico Superior de Enfermería, con dieciséis años de experiencia clínica y competencias avanzadas en salud digital.')">
-    🔊 Escuchar Presentación
-  </button>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <p>
-    <strong>Tecnóloga en Informática Biomédica</strong> y 
-    <strong>Técnico Superior de Enfermería</strong>, con 16 años de trayectoria clínica y una formación híbrida que integra experiencia asistencial con competencias avanzadas en Salud Digital.
-  </p>
+  <style>
+    :root {
+      --morado-oscuro: #1a0b2e;
+      --morado-neon: #a855f7;
+      --fucsia: #ec4899;
+      --calipso: #22d3ee;
+      --blanco: #f9fafb;
+    }
 
-  <p>
-    Especializada en <strong>soporte funcional HIS (TrakCare)</strong>, 
-    <strong>interoperabilidad</strong>, <strong>RCE</strong> y 
-    <strong>gestión de incidencias críticas</strong>, asegurando continuidad operativa en entornos de alta demanda.
-  </p>
+    html { scroll-behavior: smooth; }
 
-  <p>
-    Experiencia en instituciones <strong>públicas y privadas</strong>, actuando como enlace entre 
-    <strong>equipos clínicos y TI</strong> para fortalecer la adopción digital, mejorar flujos asistenciales y optimizar procesos con foco en seguridad del paciente y calidad de datos.
-  </p>
+    body {
+      background: var(--morado-oscuro);
+      background-image: radial-gradient(circle at 50% 50%, #2e1065 0%, #05070f 100%);
+      font-family: "Space Grotesk", sans-serif;
+      color: var(--blanco);
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      transition: 0.5s ease;
+      line-height: 1.6;
+    }
 
-  <p>
-    Complemento mi perfil con formación en <strong>Evaluación de Proyectos TI</strong>, lo que me permite analizar soluciones digitales desde una mirada integral —clínica, operativa y funcional— garantizando implementaciones eficientes, seguras y alineadas con las necesidades reales de los equipos asistenciales.
-  </p>
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+    }
 
-  <a class="btn" href="docs/cv-melissa-zamorano.pdf" download aria-label="Descargar Curriculum Vitae completo en PDF">
-    ✔ Descargar CV Completo
+    body.no-anim * {
+      animation: none !important;
+      transition: none !important;
+      box-shadow: none !important;
+      filter: none !important;
+      text-shadow: none !important;
+      transform: none !important;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--calipso);
+      outline-offset: 3px;
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      top: 0;
+      left: 0;
+    }
+
+    /* Skip link WCAG */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #22d3ee;
+      color: #000;
+      padding: 10px 15px;
+      font-weight: 700;
+      z-index: 9999;
+      border-radius: 6px;
+      transition: top 0.3s ease;
+      text-decoration: none;
+    }
+    .skip-link:focus { top: 10px; }
+
+    .toggle-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 6000;
+    }
+
+    .toggle-chip {
+      padding: 14px 36px;
+      background: #0b0d16;
+      border-radius: 40px;
+      font-weight: 700;
+      cursor: pointer;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #ffffff;
+      border: 2px solid transparent;
+      background-image:
+        linear-gradient(#0b0d16, #0b0d16),
+        linear-gradient(90deg, #ec4899, #22d3ee);
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+      box-shadow:
+        0 0 12px rgba(236, 72, 153, 0.35),
+        0 0 18px rgba(34, 211, 238, 0.35);
+      animation: chipFloat 4s ease-in-out infinite;
+      transition: 0.25s ease;
+    }
+
+    .toggle-chip.off {
+      background-image:
+        linear-gradient(#0b0d16, #0b0d16),
+        linear-gradient(90deg, #555, #777);
+      color: #bfbfbf;
+      box-shadow: none;
+    }
+
+    @keyframes chipFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    main {
+      max-width: 900px;
+      margin: 140px auto 40px;
+      padding: 20px;
+    }
+
+    .main-title {
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 25px;
+      background: linear-gradient(90deg, var(--calipso), var(--fucsia));
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: holoMove 4s linear infinite;
+    }
+
+    @keyframes holoMove {
+      0% { background-position: 0%; }
+      50% { background-position: 100%; }
+      100% { background-position: 0%; }
+    }
+
+    .header-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    img { max-width: 100%; height: auto; }
+
+    .media-img {
+      max-width: 380px;
+      width: 100%;
+      margin: 0 auto;
+      display: block;
+    }
+
+    .foto-evy,
+    .img-header,
+    .img-portfolio,
+    .img-acred {
+      animation: float2 6s ease-in-out infinite, neonPulse 4s ease-in-out infinite;
+    }
+
+    @keyframes float2 {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    @keyframes neonPulse {
+      0% { filter: drop-shadow(0 0 10px var(--calipso)); }
+      50% { filter: drop-shadow(0 0 25px var(--fucsia)); }
+      100% { filter: drop-shadow(0 0 10px var(--calipso)); }
+    }
+
+    .img-acred {
+      width: 180px;
+      height: 180px;
+      object-fit: contain;
+      border-radius: 50%;
+      margin: 0 auto 15px;
+      display: block;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(168, 85, 247, 0.3);
+      padding: 25px;
+      border-radius: 20px;
+      margin-bottom: 30px;
+      backdrop-filter: blur(12px);
+      animation: cardGlow 6s ease-in-out infinite;
+      transition: 0.35s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 25px var(--calipso);
+    }
+
+    @keyframes cardGlow {
+      0% { box-shadow: 0 0 10px rgba(34,211,238,0.2); }
+      50% { box-shadow: 0 0 25px rgba(236,72,153,0.4); }
+      100% { box-shadow: 0 0 10px rgba(34,211,238,0.2); }
+    }
+
+    .section-label {
+      color: var(--calipso);
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .text-holo {
+      font-size: 1.4rem;
+      margin-top: 0;
+      margin-bottom: 12px;
+      background: linear-gradient(90deg, var(--calipso), var(--fucsia));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 12px 16px;
+      margin-top: 8px;
+      border-radius: 10px;
+      border: none;
+      font-size: 0.82rem;
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(135deg, var(--calipso), var(--morado-neon));
+      font-weight: 600;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      transition: 0.25s ease;
+    }
+
+    .btn:hover {
+      filter: brightness(1.2);
+      box-shadow: 0 0 14px var(--fucsia);
+      transform: scale(1.02);
+    }
+
+    .btn-contact {
+      display: block;
+      width: 100%;
+      padding: 18px;
+      margin-top: 14px;
+      border-radius: 50px;
+      text-decoration: none;
+      color: white;
+      font-weight: 700;
+      text-align: center;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.04);
+      border: 2px solid transparent;
+      background-image:
+        linear-gradient(#1a0b2e, #1a0b2e),
+        linear-gradient(120deg, var(--calipso), var(--fucsia), var(--morado-neon));
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+      box-shadow: 0 0 18px rgba(34, 211, 238, 0.4);
+      backdrop-filter: blur(12px);
+      animation: floatBtn 4s ease-in-out infinite, pulseGlow 3s ease-in-out infinite;
+      transition: 0.35s ease;
+    }
+
+    @keyframes floatBtn {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 12px rgba(34, 211, 238, 0.4); }
+      50% { box-shadow: 0 0 28px rgba(236, 72, 153, 0.7); }
+      100% { box-shadow: 0 0 12px rgba(34, 211, 238, 0.4); }
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      text-decoration: none;
+      box-shadow: 0 0 20px #25D366;
+      z-index: 1500;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      margin-top: 40px;
+      color: var(--calipso);
+      opacity: 0.8;
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    button.btn,
+    .btn-contact,
+    .btn {
+      cursor: pointer;
+    }
+
+    button.btn:focus-visible,
+    .btn:focus-visible,
+    .btn-contact:focus-visible {
+      outline: 3px solid var(--calipso);
+      outline-offset: 3px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="#inicio" class="skip-link">Saltar al contenido</a>
+
+  <div id="particles-js"></div>
+
+  <div class="toggle-container">
+    <button id="toggleChip" class="toggle-chip" type="button" aria-pressed="false">
+      NEON ON
+    </button>
+  </div>
+
+  <main id="inicio">
+
+    <h1 class="main-title">Melissa Zamorano Levy – Salud Digital</h1>
+
+    <div class="header-flex">
+      <img src="img/foto-evy.png" class="foto-evy media-img" alt="Foto profesional de Melissa Zamorano">
+      <img src="img/banner-ovalado.png" class="img-header media-img" alt="Banner futurista de salud digital">
+    </div>
+
+    <!-- PRESENTACIÓN -->
+    <span class="section-label">Presentación</span>
+    <div class="card" role="region" aria-label="Presentación profesional de Melissa Zamorano Levy">
+      <h2 class="text-holo">Melissa Zamorano Levy</h2>
+
+      <button class="btn" type="button"
+        onclick="speak('Presentación profesional. Melissa Zamorano Levy, Tecnóloga en Informática Biomédica y Técnico Superior de Enfermería, con dieciséis años de experiencia clínica y competencias avanzadas en salud digital.')">
+        🔊 Escuchar Presentación
+      </button>
+
+      <p><strong>Tecnóloga en Informática Biomédica</strong> y <strong>Técnico Superior de Enfermería</strong>, con 16 años de trayectoria clínica y una formación híbrida que integra experiencia asistencial con competencias avanzadas en Salud Digital.</p>
+      <p>Especializada en soporte funcional HIS, interoperabilidad, registro clínico electrónico y gestión de incidencias críticas, asegurando continuidad operativa en entornos de alta demanda.</p>
+      <p>Experiencia en instituciones públicas y privadas, actuando como enlace entre equipos clínicos y TI para fortalecer la adopción digital, mejorar flujos asistenciales y optimizar procesos con foco en seguridad del paciente y calidad de datos.</p>
+      <p>Complemento mi perfil con formación en Evaluación de Proyectos TI, lo que me permite analizar soluciones digitales desde una mirada integral —clínica, operativa y funcional— garantizando implementaciones eficientes y alineadas con las necesidades reales de los equipos asistenciales.</p>
+
+      <a class="btn" href="docs/cv-melissa-zamorano.pdf" download>
+        ✔ Descargar CV Completo
+      </a>
+    </div>
+
+    <!-- INFORMÁTICA BIOMÉDICA -->
+    <span class="section-label">Informática Biomédica</span>
+    <div class="card" role="region" aria-label="Competencias en informática biomédica">
+      <h3 class="text-holo">Informática Biomédica</h3>
+
+      <button class="btn" type="button"
+        onclick="speak('Informática Biomédica. Implementación y soporte funcional de sistemas HIS, gestión de incidencias, continuidad operativa, optimización de flujos clínicos, calidad de datos, interoperabilidad HL7, FHIR y SNOMED, capacitación y evaluación de proyectos de tecnología en salud.')">
+        🔊 Escuchar Informática Biomédica
+      </button>
+
+      <ul>
+        <li>Implementación y soporte funcional HIS.</li>
+        <li>Gestión de incidencias y continuidad operativa.</li>
+        <li>Optimización de flujos clínicos y procesos asistenciales.</li>
+        <li>Calidad, trazabilidad y seguridad de datos clínicos.</li>
+        <li>Interoperabilidad (HL7, FHIR, SNOMED CT).</li>
+        <li>Capacitación y acompañamiento en adopción digital.</li>
+        <li>Evaluación de proyectos TI en salud.</li>
+      </ul>
+
+      <img src="img/img_web.png" class="img-portfolio media-img" alt="Vista de portafolio web de proyectos de salud digital">
+    </div>
+
+    <!-- TENS -->
+    <span class="section-label">Técnico Superior de Enfermería</span>
+    <div class="card" role="region" aria-label="Competencias como Técnico Superior de Enfermería">
+      <h3 class="text-holo">TENS</h3>
+
+      <button class="btn" type="button"
+        onclick="speak('Técnico Superior de Enfermería. Administración de medicamentos, control de signos vitales, curaciones simples y avanzadas, cuidados respiratorios, manejo de traqueostomía y colostomía, alimentación asistida y vacunación particular y a domicilio.')">
+        🔊 Escuchar TENS
+      </button>
+
+      <ul>
+        <li>Administración segura de medicamentos.</li>
+        <li>Control y registro de signos vitales.</li>
+        <li>Curaciones simples y avanzadas.</li>
+        <li>Cuidados respiratorios.</li>
+        <li>Manejo de traqueostomía.</li>
+        <li>Manejo de colostomía.</li>
+        <li>Alimentación asistida.</li>
+        <li>Vacunación particular y a domicilio.</li>
+      </ul>
+
+      <a class="btn" href="docs/titulo-tens.pdf" download>
+        ✔ Descargar Título Técnico Superior de Enfermería
+      </a>
+      <a class="btn" href="docs/registro-prestadores.pdf" download>
+        ✔ Descargar Registro de Prestador de Salud
+      </a>
+    </div>
+
+    <!-- TÍTULOS & CERTIFICADOS -->
+    <span class="section-label">Títulos & Certificados</span>
+    <div class="card" role="region" aria-label="Títulos profesionales y certificados académicos">
+      <h3 class="text-holo">Títulos & Certificados</h3>
+
+      <button class="btn" type="button"
+        onclick="speak('Títulos y certificados. Tecnóloga en Informática Biomédica, Técnico Superior de Enfermería y Evaluación de Proyectos de Tecnología de Información.')">
+        🔊 Escuchar Títulos y Certificados
+      </button>
+
+      <img src="img/acreditada.png" class="img-acred" alt="Sello de acreditación profesional de Melissa Zamorano">
+
+      <ul>
+        <li>✔ Tecnóloga en Informática Biomédica — DUOC UC</li>
+        <li>✔ Técnico Superior de Enfermería — DUOC UC</li>
+        <li>✔ Evaluación de Proyectos TI — Pontificia Universidad Católica de Chile</li>
+      </ul>
+
+      <a class="btn" href="docs/titulo-tecnologa.pdf" download>✔ Descargar Título Tecnóloga en Informática Biomédica</a>
+      <a class="btn" href="docs/titulo-tens.pdf" download>✔ Descargar Título Técnico Superior de Enfermería</a>
+      <a class="btn" href="docs/certificado-epti.pdf" download>✔ Descargar Certificado Evaluación de Proyectos TI</a>
+      <a class="btn" href="docs/registro-prestadores.pdf" download>✔ Descargar Registro de Prestador de Salud</a>
+      <a class="btn" href="docs/cv-melissa-zamorano.pdf" download>✔ Descargar CV Completo</a>
+    </div>
+
+    <!-- CERTIFICADOS OPS -->
+    <span class="section-label">Certificados OPS/PAHO</span>
+    <div class="card" role="region" aria-label="Certificados internacionales de la Organización Panamericana de la Salud">
+      <h3 class="text-holo">Certificados Internacionales</h3>
+
+      <button class="btn" type="button"
+        onclick="speak('Certificados internacionales OPS. Interoperabilidad y FHIR, CIE once, monitoreo y evaluación de atención primaria de salud, higiene de manos, prevención y control de infecciones y sistemas de información en salud.')">
+        🔊 Escuchar Certificados OPS
+      </button>
+
+      <ul>
+        <li>✔ Interoperabilidad & FHIR</li>
+        <li>✔ CIE‑11</li>
+        <li>✔ Monitoreo y Evaluación APS</li>
+        <li>✔ Higiene de Manos (COVID‑19)</li>
+        <li>✔ Prevención y Control de Infecciones</li>
+        <li>✔ Sistemas de Información en Salud</li>
+      </ul>
+
+      <a class="btn" href="docs/interoperabilidadfhir.pdf" download>✔ Descargar Interoperabilidad & FHIR</a>
+      <a class="btn" href="docs/cie-11.pdf" download>✔ Descargar CIE‑11</a>
+      <a class="btn" href="docs/monitoreoaps.pdf" download>✔ Descargar Monitoreo y Evaluación APS</a>
+      <a class="btn" href="docs/higienemanos.pdf" download>✔ Descargar Higiene de Manos</a>
+      <a class="btn" href="docs/prevencioninfecciones.pdf" download>✔ Descargar Prevención y Control de Infecciones</a>
+      <a class="btn" href="docs/sistemasinformacionsalud.pdf" download>✔ Descargar Sistemas de Información en Salud</a>
+    </div>
+
+    <!-- RESEÑAS -->
+    <span class="section-label">Reseñas Profesionales</span>
+    <div class="card" role="region" aria-label="Reseñas profesionales sobre el trabajo de Melissa Zamorano">
+      <h3 class="text-holo">Reseñas</h3>
+
+      <button class="btn" type="button"
+        onclick="speak('Reseñas profesionales. Melissa destaca por su capacidad para resolver incidencias, su dominio de sistemas HIS, su claridad en capacitación y su visión híbrida clínico tecnológica.')">
+        🔊 Escuchar Reseñas
+      </button>
+
+      <p>“Melissa destaca por su capacidad para resolver incidencias como consultor funcional HIS con rapidez y claridad.”</p>
+      <p>“Su dominio de TrakCare y su enfoque en continuidad operativa han sido clave para mejorar los flujos clínicos.”</p>
+      <p>“Excelente en capacitación: explica procesos complejos de forma simple y cercana.”</p>
+      <p>“Su visión híbrida clínico–tecnológica aporta un valor único en proyectos de Salud Digital.”</p>
+    </div>
+
+    <!-- CONTACTO -->
+    <span class="section-label" id="contacto">Contacto Profesional</span>
+    <div class="card" role="region" aria-label="Datos de contacto profesional de Melissa Zamorano">
+      <h3 class="text-holo">Contacto</h3>
+
+      <button class="btn" type="button"
+        onclick="speak('Contacto profesional. Puedes comunicarte por correo electrónico, WhatsApp o LinkedIn para coordinación, soporte o consultas relacionadas con salud digital e informática biomédica.')">
+        🔊 Escuchar Contacto
+      </button>
+
+      <p style="text-align:center; color:var(--calipso); font-size:1rem; margin-bottom:20px;">
+        Para coordinación, soporte o consultas profesionales:
+      </p>
+
+      <a class="btn-contact" href="mailto:melissazamoranolevy34@gmail.com">
+        ✉️ Email Profesional
+      </a>
+      <a class="btn-contact" href="https://wa.me/56958758398" target="_blank" rel="noopener">
+        📱 WhatsApp Directo
+      </a>
+      <a class="btn-contact" href="https://www.linkedin.com/in/melissa-z-7713a4217" target="_blank" rel="noopener">
+        🔗 LinkedIn Profesional
+      </a>
+    </div>
+
+  </main>
+
+  <a class="whatsapp-float" href="https://wa.me/56958758398" target="_blank" aria-label="Abrir chat de WhatsApp con Melissa">
+    🟢
   </a>
-</div>
-<span class="section-label" aria-label="Sección de Informática Biomédica">Informática Biomédica</span>
-<div class="card" role="region" aria-labelledby="titulo-informatica">
-  <h3 id="titulo-informatica" class="text-holo">Informática Biomédica</h3>
 
-  <button class="btn" onclick="speak('Informática Biomédica. Implementación y soporte funcional de sistemas HIS, gestión de incidencias, continuidad operativa, optimización de flujos clínicos, interoperabilidad HL7, FHIR y SNOMED, capacitación y evaluación de proyectos de tecnología en salud.')">
-    🔊 Escuchar Informática Biomédica
-  </button>
+  <footer>
+    © 2026 Melissa Zamorano Levy · Salud Digital · Sitio accesible WCAG 2.1 AA
+  </footer>
 
-  <ul role="list">
-    <li>Implementación y soporte funcional HIS.</li>
-    <li>Gestión de incidencias y continuidad operativa.</li>
-    <li>Optimización de flujos clínicos.</li>
-    <li>Calidad y trazabilidad de datos clínicos.</li>
-    <li>Interoperabilidad (HL7, FHIR, SNOMED CT).</li>
-    <li>Capacitación y adopción digital.</li>
-    <li>Evaluación de proyectos TI.</li>
-  </ul>
-</div>
-<span class="section-label" aria-label="Sección Técnico en Enfermería">Técnico Superior de Enfermería (TENS)</span>
-<div class="card" role="region" aria-labelledby="titulo-tens">
-  <h3 id="titulo-tens" class="text-holo">TENS</h3>
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    /* Partículas básicas */
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 60 },
+        "color": { "value": ["#22d3ee", "#a855f7", "#ec4899"] },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5 },
+        "size": { "value": 3 },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#22d3ee",
+          "opacity": 0.3,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 2,
+          "direction": "none",
+          "out_mode": "out"
+        }
+      },
+      "interactivity": {
+        "events": {
+          "onhover": { "enable": true, "mode": "grab" },
+          "onclick": { "enable": false }
+        },
+        "modes": {
+          "grab": { "distance": 200, "line_linked": { "opacity": 0.5 } }
+        }
+      },
+      "retina_detect": true
+    });
 
-  <button class="btn" onclick="speak('Técnico Superior de Enfermería. Administración de medicamentos, signos vitales, curaciones simples y avanzadas, cuidados respiratorios, manejo de traqueostomía y colostomía, alimentación asistida y vacunación a domicilio.')">
-    🔊 Escuchar TENS
-  </button>
+    /* Botón NEON ON/OFF accesible */
+    const toggleChip = document.getElementById('toggleChip');
+    toggleChip.addEventListener('click', () => {
+      const isOff = toggleChip.classList.toggle('off');
+      document.body.classList.toggle('no-anim', isOff);
+      toggleChip.textContent = isOff ? 'NEON OFF' : 'NEON ON';
+      toggleChip.setAttribute('aria-pressed', (!isOff).toString());
+    });
 
-  <ul role="list">
-    <li>Administración de medicamentos.</li>
-    <li>Signos vitales y registros.</li>
-    <li>Curaciones simples y avanzadas.</li>
-    <li>Cuidados respiratorios.</li>
-    <li>Manejo de traqueostomía.</li>
-    <li>Manejo de colostomía.</li>
-    <li>Alimentación asistida.</li>
-    <li>Vacunación particular y a domicilio.</li>
-  </ul>
+    /* AUDIO FLUIDO, NATURAL, CONTINUO Y WCAG */
+    function speak(text) {
+      if (!('speechSynthesis' in window)) return;
 
-  <a class="btn" href="docs/titulo-tens.pdf" download aria-label="Descargar título Técnico Superior de Enfermería en PDF">
-    ✔ Descargar Título Técnico Superior de Enfermería
-  </a>
-  <a class="btn" href="docs/registro-prestadores.pdf" download aria-label="Descargar registro de prestador de salud en PDF">
-    ✔ Descargar Registro de Prestador de Salud
-  </a>
-</div>
-<span class="section-label" aria-label="Sección de títulos y certificados">Títulos & Certificados</span>
-<div class="card" role="region" aria-labelledby="titulo-certificados">
-  <h3 id="titulo-certificados" class="text-holo">Títulos & Certificados</h3>
+      if (speechSynthesis.speaking) {
+        speechSynthesis.cancel();
+      }
 
-  <button class="btn" onclick="speak('Títulos y certificados. Tecnóloga en Informática Biomédica, Técnico Superior de Enfermería y Evaluación de Proyectos de Tecnología de Información.')">
-    🔊 Escuchar Títulos y Certificados
-  </button>
+      const clean = text
+        .replace(/\s+/g, " ")
+        .replace(/[,.;:]+/g, ",")
+        .trim();
 
-  <ul role="list" style="list-style:none; padding-left:0; line-height:1.8;">
-    <li>✔ Tecnóloga en Informática Biomédica — DUOC UC</li>
-    <li>✔ Técnico Superior de Enfermería — DUOC UC</li>
-    <li>✔ Evaluación de Proyectos TI — Pontificia Universidad Católica de Chile</li>
-  </ul>
+      const utter = new SpeechSynthesisUtterance(clean);
 
-  <a class="btn" href="docs/titulo-tecnologa.pdf" download>✔ Descargar Título Tecnóloga en Informática Biomédica</a>
-  <a class="btn" href="docs/titulo-tens.pdf" download>✔ Descargar Título Técnico Superior de Enfermería</a>
-  <a class="btn" href="docs/certificado-epti.pdf" download>✔ Descargar Certificado Evaluación de Proyectos TI</a>
-  <a class="btn" href="docs/registro-prestadores.pdf" download>✔ Descargar Registro de Prestador de Salud</a>
-  <a class="btn" href="docs/cv-melissa-zamorano.pdf" download>✔ Descargar CV Completo</a>
-</div>
-<span class="section-label" aria-label="Sección de certificados internacionales OPS">Certificados Internacionales OPS/PAHO</span>
-<div class="card" role="region" aria-labelledby="titulo-ops">
-  <h3 id="titulo-ops" class="text-holo">Certificados Internacionales</h3>
+      utter.lang = "es-CL";
+      utter.rate = 1.45;
+      utter.pitch = 1.0;
+      utter.volume = 1;
 
-  <button class="btn" onclick="speak('Certificados internacionales OPS. Interoperabilidad y FHIR, CIE once, monitoreo y evaluación APS, higiene de manos, prevención de infecciones y sistemas de información en salud.')">
-    🔊 Escuchar Certificados OPS
-  </button>
+      utter.onstart = () => {
+        speechSynthesis.resume();
+      };
 
-  <ul role="list" style="list-style:none; padding-left:0; line-height:1.8;">
-    <li>✔ Interoperabilidad & FHIR</li>
-    <li>✔ CIE‑11</li>
-    <li>✔ Monitoreo y Evaluación APS</li>
-    <li>✔ Higiene de Manos (COVID‑19)</li>
-    <li>✔ Prevención y Control de Infecciones</li>
-    <li>✔ Sistemas de Información en Salud</li>
-  </ul>
+      utter.onboundary = () => {
+        if (speechSynthesis.paused) {
+          speechSynthesis.resume();
+        }
+      };
 
-  <a class="btn" href="docs/interoperabilidadfhir.pdf" download>✔ Descargar Interoperabilidad & FHIR</a>
-  <a class="btn" href="docs/cie-11.pdf" download>✔ Descargar CIE‑11</a>
-  <a class="btn" href="docs/monitoreoaps.pdf" download>✔ Descargar Monitoreo y Evaluación APS</a>
-  <a class="btn" href="docs/higienemanos.pdf" download>✔ Descargar Higiene de Manos</a>
-  <a class="btn" href="docs/prevencioninfecciones.pdf" download>✔ Descargar Prevención y Control de Infecciones</a>
-  <a class="btn" href="docs/sistemasinformacionsalud.pdf" download>✔ Descargar Sistemas de Información en Salud</a>
-</div>
-<span class="section-label" aria-label="Sección de reseñas profesionales">Reseñas Profesionales</span>
-<div class="card" role="region" aria-labelledby="titulo-resenas">
-  <h3 id="titulo-resenas" class="text-holo">Reseñas</h3>
+      utter.onend = () => {
+        speechSynthesis.resume();
+      };
 
-  <button class="btn" onclick="speak('Reseñas profesionales. Melissa destaca por su capacidad para resolver incidencias, su dominio de TrakCare, su claridad en capacitación y su visión híbrida clínico tecnológica.')">
-    🔊 Escuchar Reseñas
-  </button>
-
-  <p>“Melissa destaca por su capacidad para resolver incidencias como consultor funcional HIS con rapidez y claridad.”</p>
-  <p>“Su dominio de TrakCare y su enfoque en continuidad operativa han sido clave para mejorar los flujos clínicos.”</p>
-  <p>“Excelente en capacitación: explica procesos complejos de forma simple.”</p>
-  <p>“Su visión híbrida clínico–tecnológica aporta un valor único en proyectos de Salud Digital.”</p>
-</div>
-<span class="section-label" id="contacto" aria-label="Sección de contacto profesional">Contacto Profesional</span>
-<div class="card" role="region" aria-labelledby="titulo-contacto">
-  <h3 id="titulo-contacto" class="text-holo">Contacto Profesional</h3>
-
-  <button class="btn" onclick="speak('Contacto profesional. Puedes comunicarte por correo electrónico, WhatsApp o LinkedIn para coordinación, soporte o consultas.')">
-    🔊 Escuchar Contacto
-  </button>
-
-  <p style="text-align:center; color:var(--calipso); font-size:1rem; margin-bottom:20px;">
-    Para coordinación, soporte o consultas profesionales:
-  </p>
-
-  <a class="btn-contact" href="mailto:melissazamoranolevy34@gmail.com">✉️ Email Profesional</a>
-  <a class="btn-contact" href="https://wa.me/56958758398" target="_blank">📱 WhatsApp Directo</a>
-  <a class="btn-contact" href="https://www.linkedin.com/in/melissa-z-7713a4217" target="_blank">🔗 LinkedIn Profesional</a>
-</div>
-
+      speechSynthesis.speak(utter);
+    }
+  </script>
+</body>
+</html>
 
