@@ -1,982 +1,506 @@
-  <!DOCTYPE html>
-  <html lang="es">
-  <head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Melissa Zamorano – Salud Digital</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --morado-oscuro:#1a0b2e; --morado-neon:#a855f7;
-      --fucsia:#ec4899; --calipso:#22d3ee; --blanco:#f9fafb;
-   }
-    body {
-      margin:0; font-family:"Space Grotesk",sans-serif;
-      background:radial-gradient(circle at 50% 50%,#2e1065 0%,#05070f 100%);
-      color:var(--blanco); overflow-x:hidden; line-height:1.6;
+      --morado-oscuro: #1a0b2e;
+      --fucsia: #ec4899;
+      --calipso: #22d3ee;
+      --blanco: #f9fafb;
     }
-    #particles-js {position:fixed;width:100%;height:100%;z-index:-1;}
-    .img-float {max-width:100%;height:auto;margin:20px auto;display:block;
-      border-radius:12px;box-shadow:0 0 20px var(--calipso);
-      animation:float2 6s ease-in-out infinite,neonPulse 4s ease-in-out infinite;}
-    @keyframes float2{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
-    @keyframes neonPulse{0%{filter:drop-shadow(0 0 10px var(--calipso));}
-      50%{filter:drop-shadow(0 0 25px var(--fucsia));}
-      100%{filter:drop-shadow(0 0 10px var(--calipso));}}
-    .main-title{text-align:center;font-size:1.8rem;font-weight:800;margin:25px 0;
-      background:linear-gradient(90deg,var(--calipso),var(--fucsia));
-      -webkit-background-clip:text;color:transparent;animation:holoMove 4s linear infinite;}
-    @keyframes holoMove{0%{background-position:0%;}50%{background-position:100%;}100%{background-position:0%;}}
-    .header-flex{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:20px;margin-bottom:30px;}
-    .header-flex img{max-width:280px;width:100%;height:auto;}
-    @media(max-width:768px){.header-flex{flex-direction:column;}
-      .header-flex img{max-width:90%;}}
-    </style>
-    </head>
 
-    <body>
-    <!-- Fondo partículas -->
-    <div id="particles-js"></div>
-
-    <main id="inicio">
-             Encabezado -->
-    <h1 class="main-title">Melissa Zamorano Levy – Salud Digital</h1>
-    <div class="header-flex">
-    <img src="img/melinka.png" alt="Foto profesional de Melissa Zamorano" class="img-float">
-    <img src="img/banner-ovalado.png" alt="Banner futurista de salud digital" class="img-float">
-    </div>
-    </main>
-
-    <!-- JS partículas -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script>
-    particlesJS("particles-js", {
-      "particles": {
-        "number": { "value": 90, "density": { "enable": true, "value_area": 800 } },
-        "color": { "value": "#22d3ee" },
-        "shape": { "type": "circle" },
-        "opacity": { "value": 0.6, "random": true },
-        "size": { "value": 2.5, "random": true },
-        "line_linked": { "enable": true, "distance": 130, "color": "#a855f7", "opacity": 0.4, "width": 1 },
-        "move": { "enable": true, "speed": 1.2 }
-      },
-      "interactivity": {
-        "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" } },
-        "modes": { "repulse": { "distance": 100 }, "push": { "particles_nb": 4 } }
-      },
-      "retina_detect": true
-    });
-  </script>
-  </body>
-  </html>
-  <!DOCTYPE html>
-  <html lang="es">
-  <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bloque 2 – Presentación</title>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
     body {
-      margin:0; font-family:"Space Grotesk",sans-serif;
-      background:radial-gradient(circle at 50% 50%,#2e1065 0%,#05070f 100%);
-      color:#f9fafb; line-height:1.6;
+      margin: 0;
+      font-family: "Space Grotesk", sans-serif;
+      background: radial-gradient(circle at 50% 50%, #2e1065 0%, #05070f 100%);
+      color: var(--blanco);
+      line-height: 1.6;
+      overflow-x: hidden;
     }
-    #particles-js {position:fixed;width:100%;height:100%;z-index:-1;}
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+    }
+
+    .main-title {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin: 25px 16px 10px;
+      background: linear-gradient(90deg, var(--calipso), var(--fucsia));
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: holoMove 4s linear infinite;
+    }
+
+    @keyframes holoMove {
+      0% { background-position: 0%; }
+      50% { background-position: 100%; }
+      100% { background-position: 0%; }
+    }
+
+    .audio-controls-top {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .header-flex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 30px;
+      padding: 0 16px;
+    }
+
+    .header-flex img {
+      width: 100%;
+      max-width: 380px;
+      border-radius: 14px;
+      box-shadow: 0 0 25px var(--calipso);
+      animation: fadeIn 1.2s ease-out forwards, float3D 6s ease-in-out infinite;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px) scale(0.95); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @keyframes float3D {
+      0% { transform: rotateY(0deg) translateY(0); }
+      50% { transform: rotateY(8deg) translateY(-12px); }
+      100% { transform: rotateY(0deg) translateY(0); }
+    }
+
     .card {
       background: rgba(255,255,255,0.03);
       border: 1px solid rgba(168,85,247,0.3);
       padding: 25px;
       border-radius: 20px;
       margin: 30px auto;
-      max-width: 800px;
+      max-width: 900px;
       backdrop-filter: blur(12px);
+      animation: fadeCard 0.8s ease-out forwards;
+      opacity: 0;
     }
+
+    @keyframes fadeCard {
+      0% { opacity: 0; transform: translateY(25px) scale(0.97); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
     .section-label {
-      color:#22d3ee;
-      font-size:1.1rem;
-      margin-bottom:10px;
-      display:block;
-      text-transform:uppercase;
-      letter-spacing:1px;
+      color: var(--calipso);
+      font-size: 1.1rem;
+      margin: 0 auto 10px;
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      max-width: 900px;
+      padding: 0 16px;
     }
+
     .text-holo {
-      font-size:1.4rem;
-      margin:0 0 12px;
-      background:linear-gradient(90deg,#22d3ee,#ec4899);
-      -webkit-background-clip:text;
-      color:transparent;
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      background: linear-gradient(90deg, var(--calipso), var(--fucsia));
+      -webkit-background-clip: text;
+      color: transparent;
     }
-    .btn {
-      display:block;
-      width:100%;
-      padding:12px 16px;
-      margin-top:8px;
-      border-radius:10px;
-      border:none;
-      font-size:0.82rem;
-      text-decoration:none;
-      color:white;
-      background:linear-gradient(135deg,#22d3ee,#a855f7);
-      font-weight:600;
-      text-align:center;
-      text-transform:uppercase;
-      letter-spacing:0.6px;
-      transition:0.25s ease;
-      cursor:pointer;
+
+    .btn-audio,
+    .btn-stop {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      border: none;
+      background: linear-gradient(135deg, var(--calipso), var(--fucsia));
+      color: white;
+      font-size: 1.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      margin-bottom: 15px;
+      box-shadow: 0 0 18px var(--calipso);
+      transition: 0.25s ease;
     }
+
+    .btn-stop {
+      background: linear-gradient(135deg, #f97373, #ef4444);
+      font-size: 1.4rem;
+    }
+
     .btn:hover {
-      filter:brightness(1.2);
-      box-shadow:0 0 14px #ec4899;
-      transform:scale(1.02);
+      transform: scale(1.05);
+      filter: brightness(1.3);
+      box-shadow: 0 0 25px var(--fucsia), 0 0 35px var(--calipso);
     }
-   </style>
-   </head>
 
-   <body>
-   <div id="particles-js"></div>
+    .img-acred {
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+      border-radius: 50%;
+      margin: 20px auto;
+      display: block;
+      box-shadow: 0 0 20px var(--calipso);
+      animation: float3D 6s ease-in-out infinite;
+    }
 
-    <main>
+    #resenas {
+      position: relative;
+      overflow: hidden;
+    }
+
+    #resenas::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: conic-gradient(from 180deg, rgba(34,211,238,0.15), transparent, rgba(236,72,153,0.18), transparent);
+      animation: orbitGlow 14s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes orbitGlow {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    #resenas p {
+      position: relative;
+      z-index: 2;
+      animation: depthFloat 10s ease-in-out infinite;
+    }
+
+    @keyframes depthFloat {
+      0% { transform: translate3d(0,0,0); }
+      50% { transform: translate3d(0,-6px,12px); }
+      100% { transform: translate3d(0,0,0); }
+    }
+  </style>
+</head>
+
+<body>
+<div id="particles-js"></div>
+
+<main id="inicio">
+
+  <h1 class="main-title">Melissa Zamorano Levy – Salud Digital</h1>
+
+  <div class="audio-controls-top">
+    <button class="btn-audio" onclick="leerBloque('inicio')" aria-label="Escuchar presentación general">👂</button>
+    <button class="btn-stop" onclick="detenerVoz()" aria-label="Detener lectura">⏹️</button>
+  </div>
+
+  <div class="header-flex" id="inicio">
+    <img src="img/melinka.png" alt="Foto profesional de Melissa Zamorano">
+    <img src="img/banner-ovalado.png" alt="Banner futurista de salud digital">
+  </div>
+
+  <section aria-labelledby="presentacion-titulo">
     <span class="section-label">Presentación</span>
     <div class="card" id="presentacion">
-      <h2 class="text-holo">Melissa Zamorano Levy</h2>
+      <h2 class="text-holo" id="presentacion-titulo">Presentación</h2>
 
-      <button class="btn" type="button" onclick="leerBloque('presentacion')">
-        🔊 Escuchar Todo el Bloque
-      </button>
+      <button class="btn-audio" onclick="leerBloque('presentacion')" aria-label="Escuchar este bloque">👂</button>
 
-      <p><strong>Tecnóloga en Informática Biomédica</strong> y <strong>Técnico Superior de Enfermería</strong>, con 16 años de trayectoria clínica y una formación    híbrida que integra experiencia asistencial con competencias avanzadas en Salud Digital.</p>
-      <p>Especializada en soporte funcional HIS, interoperabilidad, registro clínico electrónico y gestión de incidencias críticas, asegurando continuidad operativa en entornos de alta demanda.</p>
-      <p>Experiencia en instituciones públicas y privadas, actuando como enlace entre equipos clínicos y TI para fortalecer la adopción digital, mejorar flujos asistenciales y optimizar procesos con foco en seguridad del paciente y calidad de datos.</p>
-      <p>Complemento mi perfil con formación en Evaluación de Proyectos TI, lo que me permite analizar soluciones digitales desde una mirada integral —clínica, operativa y funcional— garantizando implementaciones eficientes y alineadas con las necesidades reales de los equipos asistenciales.</p>
+      <p>Melissa Zamorano Levy, Tecnóloga en Informática Biomédica y Técnico Superior de Enfermería, con 16 años de experiencia clínica. 
+        Integrando práctica sanitaria con soluciones digitales. 
+        Experiencia en Salud Digital, interoperabilidad y soporte HIS (TrakCare y SIDRA).</p>
 
-      <a class="btn" href="docs/cv-melissa-zamorano.pdf" download>
-        📄 Descargar CV Completo
-      </a>
-      </div>
-      </main>
+      <p>Participación en implementación, formación de usuarios y gestión de incidencias basadas en metodologías ITIL. 
+        Conocimientos en HL7, FHIR, CIE 10, SNOMED CT, SQL y análisis operativo. Enfoque en roles de Analista o Consultora HIS.
+        Analista de Información y Proyectos TI.</p>
 
-      <!-- JS partículas -->
-      <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-      <script>
-    particlesJS("particles-js", {
-      "particles": {
-        "number": { "value": 90, "density": { "enable": true, "value_area": 800 } },
-        "color": { "value": "#22d3ee" },
-        "shape": { "type": "circle" },
-        "opacity": { "value": 0.6, "random": true },
-        "size": { "value": 2.5, "random": true },
-        "line_linked": { "enable": true, "distance": 130, "color": "#a855f7", "opacity": 0.4, "width": 1 },
-        "move": { "enable": true, "speed": 1.2 }
-      },
-      "interactivity": {
-        "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" } },
-        "modes": { "repulse": { "distance": 100 }, "push": { "particles_nb": 4 } }
-      },
-      "retina_detect": true
-    });
+      <p>Actúo como puente entre equipos clínicos y TI, optimizando flujos asistenciales y mejorando la calidad de los datos clínicos en entornos de salud digital.</p>
 
-    // Lectura de bloques en voz
-    function leerBloque(id) {
-      const bloque = document.getElementById(id);
-      const texto = bloque.innerText;
-      const speech = new SpeechSynthesisUtterance(texto);
-      speech.lang = "es-ES";
-      window.speechSynthesis.speak(speech);
-    }
-    </script>
-    </body>
-    </html>
-    <!DOCTYPE html>
-    <html lang="es">
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bloque 3 – Informática Biomédica</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <style>
-    body {
-      margin:0; font-family:"Space Grotesk",sans-serif;
-      background:radial-gradient(circle at 50% 50%,#2e1065 0%,#05070f 100%);
-      color:#f9fafb; line-height:1.6;
-    }
-    #particles-js {position:fixed;width:100%;height:100%;z-index:-1;}
-    .card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(168,85,247,0.3);
-      padding: 25px;
-      border-radius: 20px;
-      margin: 30px auto;
-      max-width: 900px;
-      backdrop-filter: blur(12px);
-    }
-    .section-label {
-      color:#22d3ee;
-      font-size:1.1rem;
-      margin-bottom:10px;
-      display:block;
-      text-transform:uppercase;
-      letter-spacing:1px;
-    }
-    .text-holo {
-      font-size:1.4rem;
-      margin:0 0 12px;
-      background:linear-gradient(90deg,#22d3ee,#ec4899);
-      -webkit-background-clip:text;
-      color:transparent;
-    }
-    .btn {
-      display:block;
-      width:100%;
-      padding:12px 16px;
-      margin-top:8px;
-      border-radius:10px;
-      border:none;
-      font-size:0.82rem;
-      text-decoration:none;
-      color:white;
-      background:linear-gradient(135deg,#22d3ee,#a855f7);
-      font-weight:600;
-      text-align:center;
-      text-transform:uppercase;
-      letter-spacing:0.6px;
-      transition:0.25s ease;
-      cursor:pointer;
-    }
-    .btn:hover {
-      filter:brightness(1.2);
-      box-shadow:0 0 14px #ec4899;
-      transform:scale(1.02);
-    }
-    .img-float {
-      max-width:100%;
-      height:auto;
-      margin:20px auto;
-      display:block;
-      border-radius:12px;
-      box-shadow:0 0 20px #22d3ee;
-      animation:float2 6s ease-in-out infinite,neonPulse 4s ease-in-out infinite;
-    }
-    @keyframes float2{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
-    @keyframes neonPulse{0%{filter:drop-shadow(0 0 10px #22d3ee);}
-      50%{filter:drop-shadow(0 0 25px #ec4899);}
-      100%{filter:drop-shadow(0 0 10px #22d3ee);}}
-    </style>
-    </head>
-
-    <body>
-    <div id="particles-js"></div>
-
-    <main>
+      <a class="btn" href="docs/cv-melissa-zamorano.pdf" download>📄 Descargar Curriculum Vitae en PDF</a>
+    </div>
+  </section>
+ 
+  <section aria-labelledby="biomedica-titulo">
     <span class="section-label">Informática Biomédica</span>
     <div class="card" id="biomedica">
-      <h2 class="text-holo">Informática Biomédica</h2>
+      <h2 class="text-holo" id="biomedica-titulo">Informática Biomédica</h2>
 
-    <button class="btn" type="button" onclick="leerBloque('biomedica')">
-        🔊 Escuchar Informática Biomédica
-    </button>
+      <button class="btn-audio" onclick="leerBloque('biomedica')" aria-label="Escuchar este bloque">👂</button>
 
       <ul>
-        <li>Implementación y soporte funcional HIS.</li>
-        <li>Gestión de incidencias y continuidad operativa.</li>
+        <li>Implementación y soporte funcional de sistemas de información en salud, HIS.</li>
+        <li>Gestión de incidencias y continuidad operativa en plataformas clínicas.</li>
         <li>Optimización de flujos clínicos y procesos asistenciales.</li>
         <li>Calidad, trazabilidad y seguridad de datos clínicos.</li>
-        <li>Interoperabilidad (HL7, FHIR, SNOMED CT).</li>
-        <li>Capacitación y acompañamiento en adopción digital.</li>
-        <li>Evaluación de proyectos TI en salud.</li>
+        <li>Interoperabilidad con estándares HL7, FHIR y SNOMED CT.</li>
+        <li>Capacitación y acompañamiento en adopción de soluciones digitales.</li>
+        <li>Evaluación y seguimiento de proyectos TI en salud.</li>
       </ul>
 
-      <img src="img/img_web.png" alt="Imagen futurista de Informática Biomédica" class="img-float">
+      <img src="img/img_web.png" class="img-float" alt="Imagen futurista de Informática Biomédica">
 
-      <a class="btn" href="docs/informatica-biomedica.pdf" download>
-        📄 Descargar Informática Biomédica
-      </a>
+      <a class="btn" href="docs/titulo-tecnologa.pdf" download>📄 Descargar documento en PDF — Título Tecnóloga en Informática Biomédica</a>
     </div>
-    </main>
+  </section>
 
-    <!-- JS partículas + lectura de bloques -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script>
-    particlesJS("particles-js", {
-      "particles": {
-        "number": { "value": 90, "density": { "enable": true, "value_area": 800 } },
-        "color": { "value": "#22d3ee" },
-        "shape": { "type": "circle" },
-        "opacity": { "value": 0.6, "random": true },
-        "size": { "value": 2.5, "random": true },
-        "line_linked": { "enable": true, "distance": 130, "color": "#a855f7", "opacity": 0.4, "width": 1 },
-        "move": { "enable": true, "speed": 1.2 }
-      },
-      "interactivity": {
-        "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" } },
-        "modes": { "repulse": { "distance": 100 }, "push": { "particles_nb": 4 } }
-      },
-      "retina_detect": true
-    });
+  <section aria-labelledby="tens-titulo">
+    <span class="section-label">Técnico en Enfermería</span>
+    <div class="card" id="tens">
+      <h2 class="text-holo" id="tens-titulo">TENS</h2>
 
-    // Lectura de bloques en voz
-    function leerBloque(id) {
-      const bloque = document.getElementById(id);
-      const texto = bloque.innerText;
-      const speech = new SpeechSynthesisUtterance(texto);
-      speech.lang = "es-ES";
-      window.speechSynthesis.speak(speech);
-    }
-   </script>
-   </body>
-   </html>
-   <!DOCTYPE html>
-   <html lang="es">
-   <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Bloque 4 – TENS</title>
-   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-   <style>
-    body {
-      margin:0; font-family:"Space Grotesk",sans-serif;
-      background:radial-gradient(circle at 50% 50%,#2e1065 0%,#05070f 100%);
-      color:#f9fafb; line-height:1.6;
-    }
-    #particles-js {position:fixed;width:100%;height:100%;z-index:-1;}
-    .card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(168,85,247,0.3);
-      padding: 25px;
-      border-radius: 20px;
-      margin: 30px auto;
-      max-width: 900px;
-      backdrop-filter: blur(12px);
-    }
-    .section-label {
-      color:#22d3ee;
-      font-size:1.1rem;
-      margin-bottom:10px;
-      display:block;
-      text-transform:uppercase;
-      letter-spacing:1px;
-    }
-    .text-holo {
-      font-size:1.4rem;
-      margin:0 0 12px;
-      background:linear-gradient(90deg,#22d3ee,#ec4899);
-      -webkit-background-clip:text;
-      color:transparent;
-    }
-    .btn {
-      display:block;
-      width:100%;
-      padding:12px 16px;
-      margin-top:8px;
-      border-radius:10px;
-      border:none;
-      font-size:0.82rem;
-      text-decoration:none;
-      color:white;
-      background:linear-gradient(135deg,#22d3ee,#a855f7);
-      font-weight:600;
-      text-align:center;
-      text-transform:uppercase;
-      letter-spacing:0.6px;
-      transition:0.25s ease;
-      cursor:pointer;
-    }
-    .btn:hover {
-      filter:brightness(1.2);
-      box-shadow:0 0 14px #ec4899;
-      transform:scale(1.02);
-    }
-    .img-acred {
-      width:160px;
-      height:160px;
-      object-fit:contain;
-      border-radius:50%;
-      margin:20px auto;
-      display:block;
-      box-shadow:0 0 20px #22d3ee;
-      animation:float2 6s ease-in-out infinite,neonPulse 4s ease-in-out infinite;
-    }
-    @keyframes float2{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
-    @keyframes neonPulse{0%{filter:drop-shadow(0 0 10px #22d3ee);}
-      50%{filter:drop-shadow(0 0 25px #ec4899);}
-      100%{filter:drop-shadow(0 0 10px #22d3ee);}}
-  </style>
-  </head>
-
-  <body>
-  <div id="particles-js"></div>
-
-        <main>
-        <span class="section-label">Técnico Superior de Enfermería</span>
-        <div class="card" id="tens">
-        <h2 class="text-holo">TENS</h2>
-
-      <button class="btn" type="button" onclick="leerBloque('tens')">
-        🔊 Escuchar TENS
-      </button>
+      <button class="btn-audio" onclick="leerBloque('tens')" aria-label="Escuchar este bloque">👂</button>
 
       <ul>
-        <li>Administración segura de medicamentos.</li>
+        <li>Administración segura de medicamentos según indicación médica.</li>
         <li>Control y registro de signos vitales.</li>
         <li>Curaciones simples y avanzadas.</li>
-        <li>Cuidados respiratorios.</li>
+        <li>Cuidados respiratorios y manejo de oxigenoterapia.</li>
         <li>Manejo de traqueostomía.</li>
         <li>Manejo de colostomía.</li>
-        <li>Alimentación asistida.</li>
+        <li>Alimentación asistida y apoyo en actividades básicas.</li>
         <li>Vacunación particular y a domicilio.</li>
       </ul>
 
-      <img src="img/acreditada.png" alt="Sello de acreditación profesional" class="img-acred">
+      <img src="img/acreditada.png" class="img-acred" alt="Sello de acreditación profesional">
 
-      <a class="btn" href="docs/titulo-tens.pdf" download>
-         ✔ Descargar Título Técnico Superior de Enfermería
-      </a>
-
-      <a class="btn" href="docs/registro-prestadores.pdf" download>
-         ✔ Descargar Registro de Prestador de Salud
-      </a>
+      <a class="btn" href="docs/titulo-tens.pdf" download>📄 Descargar Certificado de Título Técnico Superior en Enfermería</a>
+      <a class="btn" href="docs/registro-prestadores.pdf" download>📄 Descargar Registro Nacional de Prestadores Individuales de Salud</a>
     </div>
-    </main>
+  </section>
 
-    <!-- JS partículas + lectura de bloques -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script>
-    particlesJS("particles-js", {
-      "particles": {
-        "number": { "value": 90, "density": { "enable": true, "value_area": 800 } },
-        "color": { "value": "#22d3ee" },
-        "shape": { "type": "circle" },
-        "opacity": { "value": 0.6, "random": true },
-        "size": { "value": 2.5, "random": true },
-        "line_linked": { "enable": true, "distance": 130, "color": "#a855f7", "opacity": 0.4, "width": 1 },
-        "move": { "enable": true, "speed": 1.2 }
-      },
-      "interactivity": {
-        "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" } },
-        "modes": { "repulse": { "distance": 100 }, "push": { "particles_nb": 4 } }
-      },
-      "retina_detect": true
-    });
+  <section aria-labelledby="titulos-titulo">
+    <span class="section-label">Títulos y Certificados</span>
 
-    // Lectura de bloques en voz
-    function leerBloque(id) {
-      const bloque = document.getElementById(id);
-      const texto = bloque.innerText;
-      const speech = new SpeechSynthesisUtterance(texto);
-      speech.lang = "es-ES";
-      window.speechSynthesis.speak(speech);
-    }
-   </script>
-   </body>
-   </html>
-   <!DOCTYPE html>
-   <html lang="es">
-   <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Bloque 5 – Títulos Principales</title>
-   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-   <style>
-    body {
-      margin:0; font-family:"Space Grotesk",sans-serif;
-      background:radial-gradient(circle at 50% 50%,#2e1065 0%,#05070f 100%);
-      color:#f9fafb; line-height:1.6;
-    }
-    #particles-js {position:fixed;width:100%;height:100%;z-index:-1;}
-    .card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(168,85,247,0.3);
-      padding: 25px;
-      border-radius: 20px;
-      margin: 30px auto;
-      max-width: 900px;
-      backdrop-filter: blur(12px);
-    }
-    .section-label {
-      color:#22d3ee;
-      font-size:1.1rem;
-      margin-bottom:10px;
-      display:block;
-      text-transform:uppercase;
-      letter-spacing:1px;
-    }
-    .text-holo {
-      font-size:1.4rem;
-      margin:0 0 12px;
-      background:linear-gradient(90deg,#22d3ee,#ec4899);
-      -webkit-background-clip:text;
-      color:transparent;
-    }
-    .btn {
-      display:block;
-      width:100%;
-      padding:12px 16px;
-      margin-top:8px;
-      border-radius:10px;
-      border:none;
-      font-size:0.82rem;
-      text-decoration:none;
-      color:white;
-      background:linear-gradient(135deg,#22d3ee,#a855f7);
-      font-weight:600;
-      text-align:center;
-      text-transform:uppercase;
-      letter-spacing:0.6px;
-      transition:0.25s ease;
-      cursor:pointer;
-    }
-    .btn:hover {
-      filter:brightness(1.2);
-      box-shadow:0 0 14px #ec4899;
-      transform:scale(1.02);
-    }
-  </style>
-  </head>
-
-  <body>
-  <div id="particles-js"></div>
-
-    <main>
-    <span class="section-label">Títulos Principales</span>
     <div class="card" id="titulos">
-      <h2 class="text-holo">Títulos</h2>
+      <h2 class="text-holo" id="titulos-titulo">Títulos Profesionales y Certificados Internacionales</h2>
 
-      <button class="btn" type="button" onclick="leerBloque('titulos')">
-        🔊 Escuchar Títulos
-      </button>
+      <button class="btn-audio" onclick="leerBloque('titulos')" aria-label="Escuchar este bloque">👂</button>
 
-      <ul>
-        <li>✔ Tecnóloga en Informática Biomédica — DUOC UC</li>
-        <li>✔ Técnico Superior de Enfermería — DUOC UC</li>
-        <li>✔ Evaluación de Proyectos TI — Pontificia Universidad Católica de Chile</li>
-      </ul>
+      <p>Títulos Profesionales</p>
 
-      <a class="btn" href="docs/titulo-informatica-biomedica.pdf" download>
-         ✔ Descargar Título Tecnóloga en Informática Biomédica
+      <a class="btn" href="docs/titulo-tecnologa.pdf" download>
+        📄 Descargar Certificado de Título Tecnóloga en Informática Biomédica en PDF
       </a>
+
       <a class="btn" href="docs/titulo-tens.pdf" download>
-         ✔ Descargar Título Técnico Superior de Enfermería
+        📄 Descargar Certificado de Título Técnico Superior en Enfermería en PDF
       </a>
-      <a class="btn" href="docs/certificado-evaluacion-ti.pdf" download>
-         ✔ Descargar Certificado Evaluación de Proyectos TI
+
+      <a class="btn" href="docs/certificado-epti.pdf" download>
+        📄 Descargar Certificado Evaluación de Proyectos TI, Universidad Católica, en PDF
       </a>
-    </div>
-    </main>
 
-  <!-- JS partículas + lectura de bloques -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script>
-    particlesJS("particles-js", {
-      "particles": {
-        "number": { "value": 90, "density": { "enable": true, "value_area": 800 } },
-        "color": { "value": "#22d3ee" },
-        "shape": { "type": "circle" },
-        "opacity": { "value": 0.6, "random": true },
-        "size": { "value": 2.5, "random": true },
-        "line_linked": { "enable": true, "distance": 130, "color": "#a855f7", "opacity": 0.4, "width": 1 },
-        "move": { "enable": true, "speed": 1.2 }
-      },
-      "interactivity": {
-        "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" } },
-        "modes": { "repulse": { "distance": 100 }, "push": { "particles_nb": 4 } }
-      },
-      "retina_detect": true
-    });
-
-    // Lectura de bloques en voz
-    function leerBloque(id) {
-      const bloque = document.getElementById(id);
-      const texto = bloque.innerText;
-      const speech = new SpeechSynthesisUtterance(texto);
-      speech.lang = "es-ES";
-      window.speechSynthesis.speak(speech);
-    }
-  </script>
-  </body>
-  </html>
-  <!DOCTYPE html>
-  <html lang="es">
-  <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bloque 6 – Certificados OPS/PAHO</title>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      margin:0; font-family:"Space Grotesk",sans-serif;
-      background:radial-gradient(circle at 50% 50%,#2e1065 0%,#05070f 100%);
-      color:#f9fafb; line-height:1.6;
-    }
-    #particles-js {position:fixed;width:100%;height:100%;z-index:-1;}
-    .card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(168,85,247,0.3);
-      padding: 25px;
-      border-radius: 20px;
-      margin: 30px auto;
-      max-width: 900px;
-      backdrop-filter: blur(12px);
-    }
-    .section-label {
-      color:#22d3ee;
-      font-size:1.1rem;
-      margin-bottom:10px;
-      display:block;
-      text-transform:uppercase;
-      letter-spacing:1px;
-    }
-    .text-holo {
-      font-size:1.4rem;
-      margin:0 0 12px;
-      background:linear-gradient(90deg,#22d3ee,#ec4899);
-      -webkit-background-clip:text;
-      color:transparent;
-    }
-    .btn {
-      display:block;
-      width:100%;
-      padding:12px 16px;
-      margin-top:8px;
-      border-radius:10px;
-      border:none;
-      font-size:0.82rem;
-      text-decoration:none;
-      color:white;
-      background:linear-gradient(135deg,#22d3ee,#a855f7);
-      font-weight:600;
-      text-align:center;
-      text-transform:uppercase;
-      letter-spacing:0.6px;
-      transition:0.25s ease;
-      cursor:pointer;
-    }
-    .btn:hover {
-      filter:brightness(1.2);
-      box-shadow:0 0 14px #ec4899;
-      transform:scale(1.02);
-    }
-  </style>
-  </head>
-
-  <body>
-  <div id="particles-js"></div>
-
-    <main>
-    <span class="section-label">Certificados OPS/PAHO</span>
-    <div class="card" id="ops">
-      <h2 class="text-holo">Certificados Internacionales OPS/PAHO</h2>
-
-      <button class="btn" type="button" onclick="leerBloque('ops')">
-        🔊 Escuchar Certificados OPS/PAHO
-      </button>
-
-      <ul>
-        <li>✔ Interoperabilidad & FHIR</li>
-        <li>✔ CIE‑11</li>
-        <li>✔ Monitoreo y Evaluación APS</li>
-        <li>✔ Higiene de Manos (COVID‑19)</li>
-        <li>✔ Prevención y Control de Infecciones</li>
-        <li>✔ Sistemas de Información en Salud</li>
-      </ul>
+      <p>Certificados Internacionales OPS / PAHO</p>
 
       <a class="btn" href="docs/interoperabilidadfhir.pdf" download>
-         ✔ Descargar Interoperabilidad & FHIR
+        📄 Descargar Curso Introducción a la Interoperabilidad y al estándar FHIR en PDF
       </a>
+
       <a class="btn" href="docs/cie-11.pdf" download>
-         ✔ Descargar CIE‑11
+        📄 Descargar Curso Paquete de capacitación CIE 11 en PDF
       </a>
-      <a class="btn" href="docs/monitoreoaps.pdf" download>
-         ✔ Descargar Monitoreo y Evaluación APS
-      </a>
-      <a class="btn" href="docs/higienemanos.pdf" download>
-         ✔ Descargar Higiene de Manos
-      </a>
+
       <a class="btn" href="docs/sistemasinformacionsalud.pdf" download>
-         ✔ Descargar Sistemas de Información en Salud
+        📄 Descargar Curso Introducción a los Sistemas de Información para la Salud en PDF
+      </a>
+
+      <a class="btn" href="docs/monitoreoaps.pdf" download>
+        📄 Descargar Curso y evaluación Monitoreo de la Atención Primaria de Salud en PDF
+      </a>
+
+      <a class="btn" href="docs/prevencioninfecciones.pdf" download>
+        📄 Descargar Curso Prevención y Control de Infecciones en PDF
+      </a>
+
+      <a class="btn" href="docs/higienemanos.pdf" download>
+        📄 Descargar Curso Precauciones básicas e higiene de manos, COVID 19, en PDF
       </a>
     </div>
-    </main>
+  </section>
 
-   <!-- JS partículas + lectura de bloques -->
-   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-   <script>
-    particlesJS("particles-js", {
-      "particles": {
-        "number": { "value": 90, "density": { "enable": true, "value_area": 800 } },
-        "color": { "value": "#22d3ee" },
-        "shape": { "type": "circle" },
-        "opacity": { "value": 0.6, "random": true },
-        "size": { "value": 2.5, "random": true },
-        "line_linked": { "enable": true, "distance": 130, "color": "#a855f7", "opacity": 0.4, "width": 1 },
-        "move": { "enable": true, "speed": 1.2 }
-      },
-      "interactivity": {
-        "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" } },
-        "modes": { "repulse": { "distance": 100 }, "push": { "particles_nb": 4 } }
-      },
-      "retina_detect": true
-    });
-
-    // Lectura de bloques en voz
-    function leerBloque(id) {
-      const bloque = document.getElementById(id);
-      const texto = bloque.innerText;
-      const speech = new SpeechSynthesisUtterance(texto);
-      speech.lang = "es-ES";
-      window.speechSynthesis.speak(speech);
-    }
-  </script>
-  </body>
-  </html>
-  <!DOCTYPE html>
-  <html lang="es">
-  <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bloque 7 – Reseñas Profesionales</title>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      margin:0; font-family:"Space Grotesk",sans-serif;
-      background:radial-gradient(circle at 50% 50%,#2e1065 0%,#05070f 100%);
-      color:#f9fafb; line-height:1.6;
-    }
-    #particles-js {position:fixed;width:100%;height:100%;z-index:-1;}
-    .card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(168,85,247,0.3);
-      padding: 25px;
-      border-radius: 20px;
-      margin: 30px auto;
-      max-width: 900px;
-      backdrop-filter: blur(12px);
-    }
-    .section-label {
-      color:#22d3ee;
-      font-size:1.1rem;
-      margin-bottom:10px;
-      display:block;
-      text-transform:uppercase;
-      letter-spacing:1px;
-    }
-    .text-holo {
-      font-size:1.4rem;
-      margin:0 0 12px;
-      background:linear-gradient(90deg,#22d3ee,#ec4899);
-      -webkit-background-clip:text;
-      color:transparent;
-    }
-    .btn {
-      display:block;
-      width:100%;
-      padding:12px 16px;
-      margin-top:8px;
-      border-radius:10px;
-      border:none;
-      font-size:0.82rem;
-      text-decoration:none;
-      color:white;
-      background:linear-gradient(135deg,#22d3ee,#a855f7);
-      font-weight:600;
-      text-align:center;
-      text-transform:uppercase;
-      letter-spacing:0.6px;
-      transition:0.25s ease;
-      cursor:pointer;
-    }
-    .btn:hover {
-      filter:brightness(1.2);
-      box-shadow:0 0 14px #ec4899;
-      transform:scale(1.02);
-    }
-  </style>
-  </head>
-
-  <body>
-  <div id="particles-js"></div>
-
-    <main>
+  <section aria-labelledby="resenas-titulo">
     <span class="section-label">Reseñas Profesionales</span>
     <div class="card" id="resenas">
-      <h2 class="text-holo">Reseñas</h2>
+      <h2 class="text-holo" id="resenas-titulo">Reseñas Profesionales</h2>
 
-      <button class="btn" type="button" onclick="leerBloque('resenas')">
-        🔊 Escuchar Reseñas
-      </button>
+      <button class="btn-audio" onclick="leerBloque('resenas')" aria-label="Escuchar este bloque">👂</button>
 
-      <p>“Melissa destaca por su capacidad para resolver incidencias como consultor funcional HIS con rapidez y claridad.”</p>
-      <p>“Su dominio de TrakCare y su enfoque en continuidad operativa han sido clave para mejorar los flujos clínicos.”</p>
-      <p>“Excelente en capacitación: explica procesos complejos de forma simple y cercana.”</p>
-      <p>“Su visión híbrida clínico–tecnológica aporta un valor único en proyectos de Salud Digital.”</p>
+      <p>"Melissa demuestra un dominio excepcional en salud digital, con una capacidad única para conectar equipos clínicos y TI. 
+          Su enfoque analítico y su claridad para resolver incidencias la convierten en un apoyo clave en cualquier proyecto HIS."</p>
 
-      <a class="btn" href="docs/resenas-profesionales.pdf" download>
-         📄 Descargar Reseñas Profesionales
-      </a>
+      <p>"Destaca por su profesionalismo, responsabilidad y capacidad para capacitar usuarios con paciencia y claridad. 
+          Su experiencia en interoperabilidad y estándares como HL7, FHIR y SNOMED CT es evidente en su trabajo diario."</p>
+
+      <p>"Su visión integral del proceso clínico y su experiencia como TENS le permiten comprender profundamente las necesidades reales de los equipos."</p>
     </div>
-    </main>
+  </section>
 
-  <!-- JS partículas + lectura de bloques -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script>
-    particlesJS("particles-js", {
-      "particles": {
-        "number": { "value": 90, "density": { "enable": true, "value_area": 800 } },
-        "color": { "value": "#22d3ee" },
-        "shape": { "type": "circle" },
-        "opacity": { "value": 0.6, "random": true },
-        "size": { "value": 2.5, "random": true },
-        "line_linked": { "enable": true, "distance": 130, "color": "#a855f7", "opacity": 0.4, "width": 1 },
-        "move": { "enable": true, "speed": 1.2 }
-      },
-      "interactivity": {
-        "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" } },
-        "modes": { "repulse": { "distance": 100 }, "push": { "particles_nb": 4 } }
-      },
-      "retina_detect": true
-    });
-
-    // Lectura de bloques en voz
-    function leerBloque(id) {
-      const bloque = document.getElementById(id);
-      const texto = bloque.innerText;
-      const speech = new SpeechSynthesisUtterance(texto);
-      speech.lang = "es-ES";
-      window.speechSynthesis.speak(speech);
-    }
-  </script>
-  </body>
-  </html>
-  <!DOCTYPE html>
-  <html lang="es">
-  <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bloque 8 – Contacto Profesional</title>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      margin:0; font-family:"Space Grotesk",sans-serif;
-      background:radial-gradient(circle at 50% 50%,#2e1065 0%,#05070f 100%);
-      color:#f9fafb; line-height:1.6;
-    }
-    #particles-js {position:fixed;width:100%;height:100%;z-index:-1;}
-    .card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(168,85,247,0.3);
-      padding: 25px;
-      border-radius: 20px;
-      margin: 30px auto;
-      max-width: 900px;
-      backdrop-filter: blur(12px);
-    }
-    .section-label {
-      color:#22d3ee;
-      font-size:1.1rem;
-      margin-bottom:10px;
-      display:block;
-      text-transform:uppercase;
-      letter-spacing:1px;
-    }
-    .text-holo {
-      font-size:1.4rem;
-      margin:0 0 12px;
-      background:linear-gradient(90deg,#22d3ee,#ec4899);
-      -webkit-background-clip:text;
-      color:transparent;
-    }
-    .btn {
-      display:block;
-      width:100%;
-      padding:12px 16px;
-      margin-top:8px;
-      border-radius:10px;
-      border:none;
-      font-size:0.82rem;
-      text-decoration:none;
-      color:white;
-      background:linear-gradient(135deg,#22d3ee,#a855f7);
-      font-weight:600;
-      text-align:center;
-      text-transform:uppercase;
-      letter-spacing:0.6px;
-      transition:0.25s ease;
-      cursor:pointer;
-    }
-    .btn:hover {
-      filter:brightness(1.2);
-      box-shadow:0 0 14px #ec4899;
-      transform:scale(1.02);
-    }
-  </style>
-  </head>
-
-  <body>
-  <div id="particles-js"></div>
-
-    <main>
-    <span class="section-label">Contacto Profesional</span>
+  <section aria-labelledby="contacto-titulo">
+    <span class="section-label">Contacto</span>
     <div class="card" id="contacto">
-      <h2 class="text-holo">Contacto</h2>
+      <h2 class="text-holo" id="contacto-titulo">Contacto Profesional</h2>
 
-      <button class="btn" type="button" onclick="leerBloque('contacto')">
-        🔊 Escuchar Contacto
-      </button>
+      <button class="btn-audio" onclick="leerBloque('contacto')" aria-label="Escuchar este bloque">👂</button>
 
-      <p>Para coordinación, soporte o consultas profesionales:</p>
+      <p>Para coordinación o consultas profesionales en salud digital, informática biomédica o atención de enfermería:</p>
 
-      <a class="btn" href="mailto:melissazamoranolevy34@gmail.com">
-         📧 Email: melissazamoranolevy34@gmail.com
-      </a>
-
-      <a class="btn" href="https://wa.me/56958758398">
-         📱 WhatsApp: +56 9 5875 8398
-      </a>
-
-      <a class="btn" href="https://www.linkedin.com/in/melissa-z-7713a4217">
-         🔗 LinkedIn: www.linkedin.com/in/melissa-z-7713a4217
-      </a>
-
-      <a class="btn" href="https://www.instagram.com/tens_domicilio_melissa">
-         🔷 Instagram: @tens_domicilio_melissa
-      </a>
+      <a class="btn" href="mailto:melissazamoranolevy34@gmail.com">📧 Email: melissazamoranolevy34@gmail.com</a>
+      <a class="btn" href="https://wa.me/56958758398">📱 WhatsApp: +56 9 5875 8398</a>
+      <a class="btn" href="https://www.linkedin.com/in/melissa-z-7713a4217" target="_blank">🔗 LinkedIn: Melissa Zamorano Levy</a>
+      <a class="btn" href="https://www.instagram.com/tens_domicilio_melissa" target="_blank">📸 Instagram: @tens_domicilio_melissa</a>
     </div>
-    </main>
+  </section>
 
-  <!-- JS partículas + lectura de bloques -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script>
-    particlesJS("particles-js", {
-      "particles": {
-        "number": { "value": 90, "density": { "enable": true, "value_area": 800 } },
-        "color": { "value": "#22d3ee" },
-        "shape": { "type": "circle" },
-        "opacity": { "value": 0.6, "random": true },
-        "size": { "value": 2.5, "random": true },
-        "line_linked": { "enable": true, "distance": 130, "color": "#a855f7", "opacity": 0.4, "width": 1 },
-        "move": { "enable": true, "speed": 1.2 }
-      },
-      "interactivity": {
-        "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" } },
-        "modes": { "repulse": { "distance": 100 }, "push": { "particles_nb": 4 } }
-      },
-      "retina_detect": true
-    });
+</main>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
-    // Lectura de bloques en voz
-    function leerBloque(id) {
-      const bloque = document.getElementById(id);
-      const texto = bloque.innerText;
-      const speech = new SpeechSynthesisUtterance(texto);
-      speech.lang = "es-ES";
-      window.speechSynthesis.speak(speech);
+<script>
+/* Partículas neón futuristas */
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 140, density: { enable: true, value_area: 900 } },
+    color: { value: ["#22d3ee", "#ec4899", "#a855f7"] },
+    shape: { type: "circle" },
+    opacity: { value: 0.8, random: true },
+    size: { value: 3.5, random: true },
+    line_linked: {
+      enable: true,
+      distance: 120,
+      color: "#22d3ee",
+      opacity: 0.5,
+      width: 1.2
+    },
+    move: {
+      enable: true,
+      speed: 2.2,
+      direction: "none",
+      random: true,
+      straight: false,
+      out_mode: "bounce"
     }
-  </script>
-  </body>
-  </html>
+  },
+  interactivity: {
+    detect_on: "canvas",
+    events: {
+      onhover: { enable: true, mode: "grab" },
+      onclick: { enable: true, mode: "push" }
+    },
+    modes: {
+      grab: { distance: 180, line_linked: { opacity: 0.8 } },
+      push: { particles_nb: 4 }
+    }
+  },
+  retina_detect: true
+});
+
+/* Voz Evy — pronunciación corregida + español + inglés */
+function leerBloque(id) {
+  const bloque = document.getElementById(id);
+  if (!bloque) return;
+
+  const copia = bloque.cloneNode(true);
+
+  copia.querySelectorAll("button, img, svg").forEach(el => el.remove());
+
+  copia.querySelectorAll("a").forEach(a => {
+    const texto = a.innerText.trim();
+    const span = document.createElement("span");
+    span.innerText = texto + ". ";
+    a.replaceWith(span);
+  });
+
+  // Texto original (para inglés)
+  let textoOriginal = copia.innerText.replace(/\s+/g, " ").trim();
+
+  // Texto modificado solo para ESPAÑOL (fonética)
+  let textoEs = textoOriginal
+    .replace(/FHIR/gi, "fair")
+    .replace(/HL7/gi, "hache el siete")
+    .replace(/SNOMED CT/gi, "snómed ci ti")
+    .replace(/SNOMED/gi, "snómed")
+    .replace(/CIE[- ]?11/gi, "cí e once")
+    .replace(/CIE[- ]?10/gi, "cí e diez")
+    .replace(/PDF/gi, "pe dé ef")
+    .replace(/OPS|PAHO/gi, "Organización Panamericana de la Salud")
+    .replace(/COVID[- ]?19/gi, "covid diecinueve")
+    .replace(/\bTI\b/gi, "te i")
+    .replace(/Melissa Zamorano Levy/gi, "Melissa Zamorano Levy")
+    .replace(/Salud Digital/gi, "Salud Digital");
+
+  const frasesEs = textoEs.split(/(?<=[.!?])\s+/);
+
+  window.speechSynthesis.cancel();
+
+  // 🇪🇸 Español
+  frasesEs.forEach(frase => {
+    if (!frase.trim()) return;
+    const es = new SpeechSynthesisUtterance(frase);
+    es.lang = "es-CL";
+    es.rate = 1.12;
+    es.pitch = 1;
+    window.speechSynthesis.speak(es);
+  });
+
+  // 🇺🇸 Inglés — texto original traducido simple
+  let english = textoOriginal
+    .replace(/Descargar/gi, "Download")
+    .replace(/Curriculum Vitae/gi, "Curriculum Vitae")
+    .replace(/Certificado/gi, "Certificate")
+    .replace(/Título/gi, "Degree")
+    .replace(/Tecnóloga en Informática Biomédica/gi, "Biomedical Informatics Technologist")
+    .replace(/Técnico Superior de Enfermería/gi, "Higher Level Nursing Technician")
+    .replace(/Técnico en Enfermería/gi, "Nursing Technician")
+    .replace(/Informática Biomédica/gi, "Biomedical Informatics")
+    .replace(/Salud Digital/gi, "Digital Health")
+    .replace(/Interoperabilidad/gi, "Interoperability")
+    .replace(/Sistemas de Información/gi, "Information Systems")
+    .replace(/Evaluación de Proyectos TI/gi, "IT Project Evaluation")
+    .replace(/Curso/gi, "Course")
+    .replace(/Reseñas Profesionales/gi, "Professional Reviews")
+    .replace(/Contacto Profesional/gi, "Professional Contact");
+
+  const frasesEn = english.split(/(?<=[.!?])\s+/);
+
+  frasesEn.forEach(frase => {
+    if (!frase.trim()) return;
+    const en = new SpeechSynthesisUtterance(frase);
+    en.lang = "en-US";
+    en.rate = 1.05;
+    en.pitch = 1;
+    window.speechSynthesis.speak(en);
+  });
+}
+
+// Botón para detener la voz
+function detenerVoz() {
+  window.speechSynthesis.cancel();
+}
+
+// Desbloqueo de audio para móviles
+document.addEventListener("click", function activarAudio() {
+  const unlock = new SpeechSynthesisUtterance("");
+  unlock.lang = "es-CL";
+  window.speechSynthesis.speak(unlock);
+  document.removeEventListener("click", activarAudio);
+});
+</script>
+
+</body>
+</html>
