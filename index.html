@@ -149,7 +149,27 @@
       font-size: 1.4rem;
     }
 
-    .btn:hover {
+    .btn-descargar {
+      display: block;
+      width: 100%;
+      padding: 14px 18px;
+      margin-top: 10px;
+      border-radius: 12px;
+      border: none;
+      font-size: 1rem;
+      text-decoration: none;
+      color: #fff;
+      background: linear-gradient(135deg, var(--calipso), var(--fucsia));
+      font-weight: 700;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: 0.25s ease;
+      cursor: pointer;
+      box-shadow: 0 0 18px var(--calipso);
+    }
+
+    .btn-descargar:hover {
       transform: scale(1.05);
       filter: brightness(1.3);
       box-shadow: 0 0 25px var(--fucsia), 0 0 35px var(--calipso);
@@ -207,42 +227,40 @@
   <h1 class="main-title">Melissa Zamorano Levy – Salud Digital</h1>
 
   <div class="audio-controls-top">
-    <button class="btn-audio" onclick="leerBloque('inicio')" aria-label="Escuchar presentación general">👂</button>
-    <button class="btn-stop" onclick="detenerVoz()" aria-label="Detener lectura">⏹️</button>
+    <button class="btn-audio" onclick="activarAudio()">👂</button>
+    <button class="btn-stop" onclick="detenerVoz()">⏹️</button>
   </div>
 
-  <div class="header-flex" id="inicio">
+  <div class="header-flex">
     <img src="img/melinka.png" alt="Foto profesional de Melissa Zamorano">
     <img src="img/banner-ovalado.png" alt="Banner futurista de salud digital">
   </div>
 
+  <!-- PRESENTACIÓN -->
   <section aria-labelledby="presentacion-titulo">
     <span class="section-label">Presentación</span>
     <div class="card" id="presentacion">
       <h2 class="text-holo" id="presentacion-titulo">Presentación</h2>
 
-      <button class="btn-audio" onclick="leerBloque('presentacion')" aria-label="Escuchar este bloque">👂</button>
+      <button class="btn-audio" onclick="leerBloque('presentacion')">👂</button>
 
-      <p>Melissa Zamorano Levy, Tecnóloga en Informática Biomédica y Técnico Superior de Enfermería, con 16 años de experiencia clínica. 
-        Integrando práctica sanitaria con soluciones digitales. 
-        Experiencia en Salud Digital, interoperabilidad y soporte HIS (TrakCare y SIDRA).</p>
+      <p>Melissa Zamorano Levy, Tecnóloga en Informática Biomédica y Técnico Superior de Enfermería, con 16 años de experiencia clínica. Integrando práctica sanitaria con soluciones digitales. Experiencia en Salud Digital, interoperabilidad y soporte HIS (TrakCare y SIDRA).</p>
 
-      <p>Participación en implementación, formación de usuarios y gestión de incidencias basadas en metodologías ITIL. 
-        Conocimientos en HL7, FHIR, CIE 10, SNOMED CT, SQL y análisis operativo. Enfoque en roles de Analista o Consultora HIS.
-        Analista de Información y Proyectos TI.</p>
+      <p>Participación en implementación, formación de usuarios y gestión de incidencias basadas en metodologías ITIL. Conocimientos en HL7, FHIR, CIE 10, SNOMED CT, SQL y análisis operativo. Enfoque en roles de Analista o Consultora HIS, Analista de Información y Proyectos TI.</p>
 
       <p>Actúo como puente entre equipos clínicos y TI, optimizando flujos asistenciales y mejorando la calidad de los datos clínicos en entornos de salud digital.</p>
 
-      <a class="btn" href="docs/cv-melissa-zamorano.pdf" download>📄 Descargar Curriculum Vitae en PDF</a>
+      <a class="btn-descargar" href="docs/cv-melissa-zamorano.pdf" download>📄 Descargar Curriculum Vitae en PDF</a>
     </div>
   </section>
- 
+
+  <!-- INFORMÁTICA BIOMÉDICA -->
   <section aria-labelledby="biomedica-titulo">
     <span class="section-label">Informática Biomédica</span>
     <div class="card" id="biomedica">
       <h2 class="text-holo" id="biomedica-titulo">Informática Biomédica</h2>
 
-      <button class="btn-audio" onclick="leerBloque('biomedica')" aria-label="Escuchar este bloque">👂</button>
+      <button class="btn-audio" onclick="leerBloque('biomedica')">👂</button>
 
       <ul>
         <li>Implementación y soporte funcional de sistemas de información en salud, HIS.</li>
@@ -256,16 +274,17 @@
 
       <img src="img/img_web.png" class="img-float" alt="Imagen futurista de Informática Biomédica">
 
-      <a class="btn" href="docs/titulo-tecnologa.pdf" download>📄 Descargar documento en PDF — Título Tecnóloga en Informática Biomédica</a>
+      <a class="btn-descargar" href="docs/titulo-tecnologa.pdf" download>📄 Descargar Título Tecnóloga en Informática Biomédica en PDF</a>
     </div>
   </section>
 
+  <!-- TENS -->
   <section aria-labelledby="tens-titulo">
     <span class="section-label">Técnico en Enfermería</span>
     <div class="card" id="tens">
       <h2 class="text-holo" id="tens-titulo">TENS</h2>
 
-      <button class="btn-audio" onclick="leerBloque('tens')" aria-label="Escuchar este bloque">👂</button>
+      <button class="btn-audio" onclick="leerBloque('tens')">👂</button>
 
       <ul>
         <li>Administración segura de medicamentos según indicación médica.</li>
@@ -280,91 +299,74 @@
 
       <img src="img/acreditada.png" class="img-acred" alt="Sello de acreditación profesional">
 
-      <a class="btn" href="docs/titulo-tens.pdf" download>📄 Descargar Certificado de Título Técnico Superior en Enfermería</a>
-      <a class="btn" href="docs/registro-prestadores.pdf" download>📄 Descargar Registro Nacional de Prestadores Individuales de Salud</a>
+      <a class="btn-descargar" href="docs/titulo-tens.pdf" download>📄 Descargar Título Técnico Superior en Enfermería en PDF</a>
+      <a class="btn-descargar" href="docs/registro-prestadores.pdf" download>📄 Descargar Registro Nacional de Prestadores Individuales de Salud en PDF</a>
     </div>
   </section>
 
+  <!-- TÍTULOS Y CERTIFICADOS -->
   <section aria-labelledby="titulos-titulo">
     <span class="section-label">Títulos y Certificados</span>
 
     <div class="card" id="titulos">
       <h2 class="text-holo" id="titulos-titulo">Títulos Profesionales y Certificados Internacionales</h2>
 
-      <button class="btn-audio" onclick="leerBloque('titulos')" aria-label="Escuchar este bloque">👂</button>
+      <button class="btn-audio" onclick="leerBloque('titulos')">👂</button>
 
       <p>Títulos Profesionales</p>
 
-      <a class="btn" href="docs/titulo-tecnologa.pdf" download>
-        📄 Descargar Certificado de Título Tecnóloga en Informática Biomédica en PDF
-      </a>
+      <a class="btn-descargar" href="docs/titulo-tecnologa.pdf" download>📄 Descargar Título Tecnóloga en Informática Biomédica en PDF</a>
 
-      <a class="btn" href="docs/titulo-tens.pdf" download>
-        📄 Descargar Certificado de Título Técnico Superior en Enfermería en PDF
-      </a>
+      <a class="btn-descargar" href="docs/titulo-tens.pdf" download>📄 Descargar Título Técnico Superior en Enfermería en PDF</a>
 
-      <a class="btn" href="docs/certificado-epti.pdf" download>
-        📄 Descargar Certificado Evaluación de Proyectos TI, Universidad Católica, en PDF
-      </a>
+      <a class="btn-descargar" href="docs/certificado-epti.pdf" download>📄 Descargar Certificado Evaluación de Proyectos TI en PDF</a>
 
       <p>Certificados Internacionales OPS / PAHO</p>
 
-      <a class="btn" href="docs/interoperabilidadfhir.pdf" download>
-        📄 Descargar Curso Introducción a la Interoperabilidad y al estándar FHIR en PDF
-      </a>
+      <a class="btn-descargar" href="docs/interoperabilidadfhir.pdf" download>📄 Descargar Curso Introducción a la Interoperabilidad y al estándar FHIR en PDF</a>
 
-      <a class="btn" href="docs/cie-11.pdf" download>
-        📄 Descargar Curso Paquete de capacitación CIE 11 en PDF
-      </a>
+      <a class="btn-descargar" href="docs/cie-11.pdf" download>📄 Descargar Curso Paquete de capacitación CIE 11 en PDF</a>
 
-      <a class="btn" href="docs/sistemasinformacionsalud.pdf" download>
-        📄 Descargar Curso Introducción a los Sistemas de Información para la Salud en PDF
-      </a>
+      <a class="btn-descargar" href="docs/sistemasinformacionsalud.pdf" download>📄 Descargar Curso Introducción a los Sistemas de Información para la Salud en PDF</a>
 
-      <a class="btn" href="docs/monitoreoaps.pdf" download>
-        📄 Descargar Curso y evaluación Monitoreo de la Atención Primaria de Salud en PDF
-      </a>
+      <a class="btn-descargar" href="docs/monitoreoaps.pdf" download>📄 Descargar Curso y evaluación Monitoreo de la Atención Primaria de Salud en PDF</a>
 
-      <a class="btn" href="docs/prevencioninfecciones.pdf" download>
-        📄 Descargar Curso Prevención y Control de Infecciones en PDF
-      </a>
+      <a class="btn-descargar" href="docs/prevencioninfecciones.pdf" download>📄 Descargar Curso Prevención y Control de Infecciones en PDF</a>
 
-      <a class="btn" href="docs/higienemanos.pdf" download>
-        📄 Descargar Curso Precauciones básicas e higiene de manos, COVID 19, en PDF
-      </a>
+      <a class="btn-descargar" href="docs/higienemanos.pdf" download>📄 Descargar Curso Precauciones básicas e higiene de manos, COVID 19, en PDF</a>
     </div>
   </section>
 
+  <!-- RESEÑAS -->
   <section aria-labelledby="resenas-titulo">
     <span class="section-label">Reseñas Profesionales</span>
     <div class="card" id="resenas">
       <h2 class="text-holo" id="resenas-titulo">Reseñas Profesionales</h2>
 
-      <button class="btn-audio" onclick="leerBloque('resenas')" aria-label="Escuchar este bloque">👂</button>
+      <button class="btn-audio" onclick="leerBloque('resenas')">👂</button>
 
-      <p>"Melissa demuestra un dominio excepcional en salud digital, con una capacidad única para conectar equipos clínicos y TI. 
-          Su enfoque analítico y su claridad para resolver incidencias la convierten en un apoyo clave en cualquier proyecto HIS."</p>
+      <p>"Melissa demuestra un dominio excepcional en salud digital, con una capacidad única para conectar equipos clínicos y TI. Su enfoque analítico y su claridad para resolver incidencias la convierten en un apoyo clave en cualquier proyecto HIS."</p>
 
-      <p>"Destaca por su profesionalismo, responsabilidad y capacidad para capacitar usuarios con paciencia y claridad. 
-          Su experiencia en interoperabilidad y estándares como HL7, FHIR y SNOMED CT es evidente en su trabajo diario."</p>
+      <p>"Destaca por su profesionalismo, responsabilidad y capacidad para capacitar usuarios con paciencia y claridad. Su experiencia en interoperabilidad y estándares como HL7, FHIR y SNOMED CT es evidente en su trabajo diario."</p>
 
       <p>"Su visión integral del proceso clínico y su experiencia como TENS le permiten comprender profundamente las necesidades reales de los equipos."</p>
     </div>
   </section>
 
+  <!-- CONTACTO -->
   <section aria-labelledby="contacto-titulo">
     <span class="section-label">Contacto</span>
     <div class="card" id="contacto">
       <h2 class="text-holo" id="contacto-titulo">Contacto Profesional</h2>
 
-      <button class="btn-audio" onclick="leerBloque('contacto')" aria-label="Escuchar este bloque">👂</button>
+      <button class="btn-audio" onclick="leerBloque('contacto')">👂</button>
 
       <p>Para coordinación o consultas profesionales en salud digital, informática biomédica o atención de enfermería:</p>
 
-      <a class="btn" href="mailto:melissazamoranolevy34@gmail.com">📧 Email: melissazamoranolevy34@gmail.com</a>
-      <a class="btn" href="https://wa.me/56958758398">📱 WhatsApp: +56 9 5875 8398</a>
-      <a class="btn" href="https://www.linkedin.com/in/melissa-z-7713a4217" target="_blank">🔗 LinkedIn: Melissa Zamorano Levy</a>
-      <a class="btn" href="https://www.instagram.com/tens_domicilio_melissa" target="_blank">📸 Instagram: @tens_domicilio_melissa</a>
+      <a class="btn-descargar" href="mailto:melissazamoranolevy34@gmail.com">📧 Email: melissazamoranolevy34@gmail.com</a>
+      <a class="btn-descargar" href="https://wa.me/56958758398">📱 WhatsApp: +56 9 5875 8398</a>
+      <a class="btn-descargar" href="https://www.linkedin.com/in/melissa-z-7713a4217" target="_blank">🔗 LinkedIn: Melissa Zamorano Levy</a>
+      <a class="btn-descargar" href="https://www.instagram.com/tens_domicilio_melissa" target="_blank">📸 Instagram: @tens_domicilio_melissa</a>
     </div>
   </section>
 
@@ -410,70 +412,81 @@ particlesJS("particles-js", {
   retina_detect: true
 });
 
-/* Voz Evy — pronunciación corregida + español + inglés */
+/* ACTIVAR AUDIO */
+function activarAudio() {
+  const unlock = new SpeechSynthesisUtterance("Audio activado.");
+  unlock.lang = "es-CL";
+  unlock.rate = 1.05;
+  window.speechSynthesis.speak(unlock);
+}
+
+/* DETENER AUDIO */
+function detenerVoz() {
+  window.speechSynthesis.cancel();
+}
+
+/* LECTURA DE BLOQUES */
 function leerBloque(id) {
+  detenerVoz();
+
   const bloque = document.getElementById(id);
   if (!bloque) return;
 
   const copia = bloque.cloneNode(true);
 
+  // Quitar botones, imágenes, SVG
   copia.querySelectorAll("button, img, svg").forEach(el => el.remove());
 
+  // Convertir enlaces en texto legible
   copia.querySelectorAll("a").forEach(a => {
-    const texto = a.innerText.trim();
     const span = document.createElement("span");
-    span.innerText = texto + ". ";
+
+    if (a.classList.contains("btn-descargar")) {
+      span.innerText = "Botón de descarga: " + a.innerText.trim() + ". ";
+    } else {
+      span.innerText = a.innerText.trim() + ". ";
+    }
+
     a.replaceWith(span);
   });
 
-  // Texto original (para inglés)
   let textoOriginal = copia.innerText.replace(/\s+/g, " ").trim();
 
-  // Texto modificado solo para ESPAÑOL (fonética)
+  /* ESPAÑOL — pronunciación EXACTA */
   let textoEs = textoOriginal
     .replace(/FHIR/gi, "fair")
-    .replace(/HL7/gi, "hache el siete")
-    .replace(/SNOMED CT/gi, "snómed ci ti")
+    .replace(/HL7/gi, "ache ele siete")
+    .replace(/SNOMED CT/gi, "snómed ce te")
     .replace(/SNOMED/gi, "snómed")
     .replace(/CIE[- ]?11/gi, "cí e once")
     .replace(/CIE[- ]?10/gi, "cí e diez")
-    .replace(/PDF/gi, "pe dé ef")
-    .replace(/OPS|PAHO/gi, "Organización Panamericana de la Salud")
-    .replace(/COVID[- ]?19/gi, "covid diecinueve")
     .replace(/\bTI\b/gi, "te i")
-    .replace(/Melissa Zamorano Levy/gi, "Melissa Zamorano Levy")
-    .replace(/Salud Digital/gi, "Salud Digital");
+    .replace(/PDF/gi, "pe de ef")
+    .replace(/Curriculum Vitae/gi, "currículum vitáe");
 
   const frasesEs = textoEs.split(/(?<=[.!?])\s+/);
 
-  window.speechSynthesis.cancel();
-
-  // 🇪🇸 Español
   frasesEs.forEach(frase => {
     if (!frase.trim()) return;
     const es = new SpeechSynthesisUtterance(frase);
     es.lang = "es-CL";
-    es.rate = 1.12;
+    es.rate = 1.08;
     es.pitch = 1;
     window.speechSynthesis.speak(es);
   });
 
-  // 🇺🇸 Inglés — texto original traducido simple
+  /* INGLÉS — traducción simple */
   let english = textoOriginal
     .replace(/Descargar/gi, "Download")
+    .replace(/Botón de descarga/gi, "Download button")
     .replace(/Curriculum Vitae/gi, "Curriculum Vitae")
     .replace(/Certificado/gi, "Certificate")
     .replace(/Título/gi, "Degree")
-    .replace(/Tecnóloga en Informática Biomédica/gi, "Biomedical Informatics Technologist")
-    .replace(/Técnico Superior de Enfermería/gi, "Higher Level Nursing Technician")
-    .replace(/Técnico en Enfermería/gi, "Nursing Technician")
     .replace(/Informática Biomédica/gi, "Biomedical Informatics")
+    .replace(/Técnico Superior en Enfermería/gi, "Higher Level Nursing Technician")
     .replace(/Salud Digital/gi, "Digital Health")
-    .replace(/Interoperabilidad/gi, "Interoperability")
     .replace(/Sistemas de Información/gi, "Information Systems")
-    .replace(/Evaluación de Proyectos TI/gi, "IT Project Evaluation")
     .replace(/Curso/gi, "Course")
-    .replace(/Reseñas Profesionales/gi, "Professional Reviews")
     .replace(/Contacto Profesional/gi, "Professional Contact");
 
   const frasesEn = english.split(/(?<=[.!?])\s+/);
@@ -482,25 +495,14 @@ function leerBloque(id) {
     if (!frase.trim()) return;
     const en = new SpeechSynthesisUtterance(frase);
     en.lang = "en-US";
-    en.rate = 1.05;
+    en.rate = 1.02;
     en.pitch = 1;
     window.speechSynthesis.speak(en);
   });
 }
-
-// Botón para detener la voz
-function detenerVoz() {
-  window.speechSynthesis.cancel();
-}
-
-// Desbloqueo de audio para móviles
-document.addEventListener("click", function activarAudio() {
-  const unlock = new SpeechSynthesisUtterance("");
-  unlock.lang = "es-CL";
-  window.speechSynthesis.speak(unlock);
-  document.removeEventListener("click", activarAudio);
-});
 </script>
 
 </body>
 </html>
+
+
