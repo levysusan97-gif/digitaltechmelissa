@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mapa de Roles y Perfilamiento de Usuarios en un HIS</title>
+<style>
+:root{color-scheme:dark;--bg:#060b16;--panel:#0c1526;--line:#1f3a5f;--txt:#dbe8ff;--mut:#7f93b5;--cy:#22d3ee;--vi:#a78bfa;--gr:#34d399;--am:#fbbf24;--rd:#fb7185;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--txt);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+body{background:radial-gradient(circle at 50% 0,#0f2347 0,var(--bg) 60%) no-repeat;min-height:100%;padding:20px 14px 40px}
+h1{margin:0;font-size:clamp(22px,4vw,34px);letter-spacing:.04em;background:linear-gradient(90deg,var(--cy),var(--vi));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--mut);margin:6px 0 16px;font-size:14px}
+.wrap{max-width:1100px;margin:auto}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:rgba(12,21,38,.6)}
+svg{display:block;min-width:760px;width:100%;height:auto}
+.link{stroke:var(--line);stroke-width:2;fill:none}
+.flow{stroke:var(--cy);stroke-width:2;fill:none;stroke-dasharray:6 22;animation:f 1.6s linear infinite;opacity:.8}
+.dash{stroke:var(--am);stroke-dasharray:4 6;animation:none;opacity:.7}
+@keyframes f{to{stroke-dashoffset:-56}}
+.node{cursor:pointer}
+.node rect{fill:#0b1a30;stroke:var(--c);stroke-width:1.6;transition:.2s}
+.node:hover rect,.node.on rect{fill:#12294a;filter:drop-shadow(0 0 8px var(--c))}
+.node text{fill:var(--txt);font-size:13px;text-anchor:middle;pointer-events:none}
+.node .ic{font-size:20px}
+.node .t2{fill:var(--mut);font-size:10px}
+.panel{margin-top:16px;border:1px solid var(--line);border-radius:16px;background:var(--panel);padding:18px}
+.panel h2{margin:0 0 4px;font-size:20px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:12px}
+.cols h3{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin:0 0 6px}
+ul{margin:0;padding-left:18px;font-size:14px;line-height:1.6}
+.chip{display:inline-block;padding:3px 10px;margin:2px 4px 2px 0;border-radius:99px;border:1px solid var(--cy);color:var(--cy);font-size:12px}
+.path{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.path span{padding:6px 12px;border-radius:10px;background:#0b1a30;border:1px solid var(--line);font-size:13px}
+.path b{color:var(--cy);margin-right:6px}
+h2.s{margin:26px 0 0;font-size:18px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<p style="margin:0 0 14px"><a href="index.html" style="color:var(--cy);text-decoration:none;font-size:14px">← Volver al inicio</a></p>
+<h1>Mapa de Roles y Perfilamiento de Usuarios en un HIS</h1>
+<p class="sub">Diseñado por Melissa Zamorano · Toca un nodo para ver qué hace, qué puede ver y qué módulos usa.</p>
+<div class="scroll"><svg id="map" viewBox="0 0 1100 600" role="img" aria-label="Mapa de roles del HIS"></svg></div>
+<div class="panel" id="panel"></div>
+<h2 class="s">🎯 Ruta de aprendizaje · Informática Biomédica</h2>
+<div class="path" id="path"></div>
+<h2 class="s">👤 Cómo nace un usuario en el HIS</h2>
+<div class="path" id="life"></div>
+</div>
+<script>
+var D={
+dir:{i:"🏥",n:"Director/a Hospital",s:"Dirección",c:"#a78bfa",x:550,y:50,h:"Máxima autoridad del establecimiento; autoriza las políticas de acceso.",do:["Aprueba políticas de acceso","Solicita reportes de gestión"],see:["Indicadores globales"],no:[],mod:["Reportería"]},
+adm:{i:"🔐",n:"Administrador HIS",s:"Unidad de Informática",c:"#fb7185",x:550,y:150,h:"Referente informático local: crea los usuarios y asigna perfil y permisos, con autorización de la jefatura.",do:["Crear usuarios (con solicitud autorizada)","Crear perfiles","Configurar permisos","Mantener catálogos","Auditorías"],see:["CIE-10","Usuarios","Seguridad","Parámetros clínicos"],no:[],mod:["Administración","Seguridad"]},
+con:{i:"🖥️",n:"Melissa Zamorano",s:"Consultor HIS",c:"#fbbf24",x:900,y:150,h:"Consultor HIS · Informática Biomédica. Puente entre lo clínico y lo técnico.",do:["Levantamiento de procesos","Parametrización","Gestión de usuarios","Definición de perfiles","Capacitación","Interoperabilidad: HL7, FHIR","Integraciones y validación de flujos"],see:["Flujos de todos los módulos"],no:[],mod:["ADT","Agenda","HCE","Urgencia","Hospitalización","Pabellón","Farmacia","LIS","RIS","PACS","Facturación","Interoperabilidad"]},
+g1:{i:"🗂️",n:"Admisión / SOME",s:"Grupo · Ingreso",c:"#22d3ee",x:130,y:270,h:"Puerta de entrada del paciente.",do:[],see:[],no:[],mod:["ADT","Agenda"],mem:["Administrativo SOME (Servicio de Orientación Médico Estadístico)"]},
+g2:{i:"🩺",n:"Clínico",s:"Grupo · Atención directa",c:"#34d399",x:400,y:270,h:"Atención directa al paciente.",do:[],see:[],no:[],mod:["HCE","Hospitalización"],mem:["Enfermero/a","Matrón/a","TENS","Médico/a"]},
+g3:{i:"🧬",n:"Apoyo Clínico",s:"Grupo · Diagnóstico y terapia",c:"#a78bfa",x:715,y:270,h:"Apoyan la decisión y el tratamiento clínico.",do:[],see:[],no:[],mod:["LIS","RIS","Farmacia"],mem:["Tecnólogo Médico","Químico Farmacéutico","Otros perfiles: nutricionista, kinesiólogo, psicólogo, asistente social"]},
+g4:{i:"💼",n:"Apoyo Administrativo",s:"Grupo · Gestión y cobros",c:"#f472b6",x:980,y:270,h:"Sostienen la operación económica del hospital.",do:[],see:[],no:[],mod:["Facturación","Recaudación"],mem:["Finanzas y Recaudación"]},
+rec:{i:"🧑‍💼",n:"Administrativo SOME",s:"Admisión y agenda",c:"#22d3ee",x:130,y:420,h:"Registra al paciente y agenda en el SOME.",do:["Crear pacientes","Actualizar datos demográficos","Agendar citas","Generar episodios de atención","Verificar previsión (FONASA, Isapre)"],see:["Datos personales","Agenda","Prestaciones"],no:["Evoluciones médicas sensibles","Configuración del sistema"],mod:["ADT","Agenda","Facturación básica"]},
+enf:{i:"👩‍⚕️",n:"Enfermería",s:"Equipo de enfermería",c:"#34d399",x:320,y:420,h:"Cuidado y seguimiento del paciente.",do:["Gestión del cuidado (Enfermero/a, Matrón/a)","Signos vitales y procedimientos (TENS)","Administración de medicamentos","Gestión de camas"],see:["Diagnósticos","Indicaciones","Exámenes"],no:[],mod:["HCE","Hospitalización","Farmacia"],reg:["Temperatura","Presión arterial","Saturación O2"]},
+med:{i:"👨‍⚕️",n:"Médico",s:"Clínico",c:"#34d399",x:480,y:420,h:"Decide el plan clínico.",do:["Diagnosticar","Evolucionar","Solicitar exámenes","Prescribir medicamentos","Dar altas (epicrisis)"],see:["CIE-10","Diagnósticos","Indicaciones"],no:[],mod:["HCE","Laboratorio","Imagenología","Farmacia"]},
+tec:{i:"🧪",n:"Tecnólogo Médico",s:"Apoyo clínico",c:"#a78bfa",x:635,y:420,h:"Resultados confiables.",do:["Validar resultados","Gestionar exámenes","Revisar controles de calidad"],see:["Órdenes médicas","Resultados"],no:[],mod:["LIS","RIS"]},
+qf:{i:"💊",n:"Químico Farmacéutico",s:"Apoyo clínico",c:"#a78bfa",x:795,y:420,h:"Seguridad en medicamentos.",do:["Validar recetas","Gestionar stock","Dispensación"],see:["Recetas","Stock"],no:[],mod:["Farmacia"]},
+fin:{i:"💰",n:"Recaudación",s:"Finanzas y convenios",c:"#f472b6",x:980,y:420,h:"Cobros y convenios.",do:["Cobros y recaudación","Convenios (FONASA, Isapre, seguros)","Aranceles","Reembolsos"],see:["Prestaciones","Convenios"],no:[],mod:["Facturación","Recaudación"]}
+};
+var L=[["dir","adm"],["adm","g1"],["adm","g2"],["adm","g3"],["adm","g4"],["g1","rec"],["g2","enf"],["g2","med"],["g3","tec"],["g3","qf"],["g4","fin"],["adm","con"]];
+var svg=document.getElementById("map"),h="";
+L.forEach(function(l){var a=D[l[0]],b=D[l[1]],m=(a.y+b.y)/2,p="M"+a.x+" "+(a.y+26)+"C"+a.x+" "+m+","+b.x+" "+m+","+b.x+" "+(b.y-26);
+if(l[1]=="con")p="M"+(a.x+80)+" "+a.y+"L"+(b.x-80)+" "+b.y;
+h+='<path class="link" d="'+p+'"/><path class="flow'+(l[1]=="con"?" dash":"")+'" d="'+p+'"/>'});
+Object.keys(D).forEach(function(k){var d=D[k],w=k.charAt(0)=="g"?170:150;
+h+='<g class="node" data-k="'+k+'" style="--c:'+d.c+'" tabindex="0"><rect x="'+(d.x-w/2)+'" y="'+(d.y-26)+'" width="'+w+'" height="52" rx="14"/><text class="ic" x="'+(d.x-w/2+18)+'" y="'+(d.y+7)+'">'+d.i+'</text><text x="'+(d.x+10)+'" y="'+(d.y-2)+'">'+d.n+'</text><text class="t2" x="'+(d.x+10)+'" y="'+(d.y+14)+'">'+d.s+'</text></g>'});
+h+='<rect x="430" y="192" width="240" height="24" rx="12" fill="#0b1a30" stroke="#fb7185"/><text x="550" y="208" text-anchor="middle" font-size="12" fill="#fb7185">🔐 crea usuarios y asigna perfiles</text>';svg.innerHTML=h;
+function li(a){return a&&a.length?"<ul>"+a.map(function(x){return"<li>"+x+"</li>"}).join("")+"</ul>":"<span style='color:var(--mut)'>—</span>"}
+function show(k){var d=D[k];document.querySelectorAll(".node").forEach(function(n){n.classList.toggle("on",n.dataset.k==k)});
+var s="<h2>"+d.i+" "+d.n+"</h2><div style='color:var(--mut)'>"+d.h+"</div><div class='cols'>";
+if(d.do.length)s+="<div><h3>Qué hace</h3>"+li(d.do)+"</div>";
+if(d.see.length)s+="<div><h3>✅ Puede ver</h3>"+li(d.see)+"</div>";
+if(d.reg)s+="<div><h3>✅ Puede registrar</h3>"+li(d.reg)+"</div>";
+if(d.no.length)s+="<div><h3>❌ No puede ver</h3>"+li(d.no)+"</div>";
+if(d.mem)s+="<div><h3>Integrantes</h3>"+li(d.mem)+"</div>";s+="<div><h3>Módulos</h3>"+d.mod.map(function(m){return"<span class='chip'>"+m+"</span>"}).join("")+"</div></div>";
+document.getElementById("panel").innerHTML=s}
+document.querySelectorAll(".node").forEach(function(n){n.addEventListener("click",function(){show(n.dataset.k)});n.addEventListener("keydown",function(e){if(e.key=="Enter")show(n.dataset.k)})});
+show("con");
+var U=["Jefatura de la unidad solicita el acceso","Informática (Administrador HIS) crea el usuario","Asigna perfil o rol","Configura permisos y módulos","Consultor HIS capacita","Auditoría y baja del usuario"];
+document.getElementById("life").innerHTML=U.map(function(x,i){return"<span><b>"+(i+1)+"</b>"+x+"</span>"}).join("");
+var P=["ADT","Agenda","Historia Clínica","CIE-10","Laboratorio (LIS)","RIS/PACS","Farmacia","Hospitalización","Facturación","HL7 y FHIR"];
+document.getElementById("path").innerHTML=P.map(function(x,i){return"<span><b>"+(i+1)+"</b>"+x+"</span>"}).join("");
+</script>
+</body>
+</html>
