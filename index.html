@@ -4,6 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Melissa Zamorano | Salud digital e informática biomédica</title>
+<meta name="description" content="Consultora funcional HIS (TrakCare, SIDRA), Tecnóloga en Informática Biomédica y TENS. Interoperabilidad HL7-FHIR.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Melissa Zamorano | Salud digital e informática biomédica">
+<meta property="og:description" content="Consultora funcional HIS, interoperabilidad HL7-FHIR y 16 años de experiencia clínica.">
+<meta property="og:image" content="https://digitalhealthmelissa.netlify.app/img_perfil.png">
+<meta property="og:url" content="https://digitalhealthmelissa.netlify.app/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -220,6 +226,18 @@ a[download]{cursor:pointer}
 .dest-num span{display:block;font-size:7rem;font-weight:800;background:linear-gradient(180deg,var(--primary),var(--accent));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 18px rgba(45,212,191,.6))}
 .dest-num small{display:block;margin-top:6px;font-size:1rem;letter-spacing:.25em;color:#c9d2ff}
 @media(max-width:700px){.dest-card{grid-template-columns:1fr;padding:26px 18px 22px;text-align:center;gap:10px}.dest-num{order:-1}.dest-num span{font-size:4.5rem}.dest-title{font-size:1.5rem}.dest-groups{justify-content:center}.dest-btn{display:block}.dest-badge{left:50%;transform:translateX(-50%);animation:none}}
+
+/* ===== Cifras, experiencia y proyecto HIS ===== */
+.cifras{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:14px;margin:6px 0 0}
+.cifra{text-align:center}
+.cifra strong{display:block;font-size:2rem;line-height:1.1;color:var(--primary);text-shadow:0 0 12px rgba(45,212,191,.6)}
+.cifra span{font-size:.9rem;color:#c9d2ff}
+.grupo{margin:18px 0 10px;font-weight:600;color:#fff}
+.linea{list-style:none;display:grid;gap:14px;padding-left:24px;border-left:2px solid var(--primary);box-shadow:-4px 0 10px -8px var(--primary)}
+.linea>li{position:relative}
+.linea>li::before{content:"";position:absolute;left:-32px;top:24px;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent)}
+.donde{margin-bottom:6px;color:var(--primary);font-size:.9rem}
+.aviso{margin-top:14px;padding:10px 14px;border-left:3px solid var(--primary);font-size:.92rem;color:#dfe5ff}
 </style>
 </head>
 <body>
@@ -230,8 +248,10 @@ a[download]{cursor:pointer}
 <div class="logo"><span>MZ</span></div>
 <nav class="nav-links">
 <a href="#sobre-mi">Sobre mí</a>
+<a href="#experiencia">Experiencia</a>
 <a href="#salud-digital">Digital</a>
 <a href="#tens-domicilio">TENS</a>
+<a href="#proyecto-his">Mi HIS</a>
 <a href="modulos-his.html" class="nav-hot">Módulos HIS</a>
 <a href="mapa-roles-his.html" class="nav-hot">Mapa de roles</a>
 <a href="#formacion">Formación</a>
@@ -251,7 +271,7 @@ a[download]{cursor:pointer}
 <p class="lema">Consultora HIS | Salud Digital | Interoperabilidad HL7-FHIR | TENS</p>
 <p>Impulso la transformación digital en salud mediante la implementación de sistemas clínicos, la optimización de procesos y la interoperabilidad de la información, contribuyendo a una atención más eficiente y segura.</p>
 <div class="cv-downloads">
-<a href="curriculum_vitae_informatica_biomedica.pdf" class="btn" download="curriculum_vitae_informatica_biomedica">📄 CV Informática Biomédica</a>
+<a href="curriculum_vitae_informatica_biomedica.pdf" class="btn" download="CV_Melissa_Zamorano_Informatica_Biomedica.pdf">📄 CV Informática Biomédica</a>
 <a href="curriculum_vitae_tens.pdf" class="btn btn-alt" download="CV_Melissa_Zamorano_TENS.pdf">📄 CV TENS</a>
 </div>
 </div>
@@ -272,6 +292,16 @@ a[download]{cursor:pointer}
 <img src="cruz_informatica_biomedica.png" alt="Cruz informática" class="cruz">
 </div>
 </section>
+
+<section id="cifras" aria-label="Resumen en cifras" style="margin:20px 0 10px">
+<div class="cifras">
+<div class="card cifra"><strong>16 años</strong><span>de clínica en UCI, UPC y prehospitalaria</span></div>
+<div class="card cifra"><strong>600+</strong><span>usuarios capacitados en la puesta en marcha de TrakCare</span></div>
+<div class="card cifra"><strong>2 HIS</strong><span>TrakCare y SIDRA en hospitales públicos</span></div>
+<div class="card cifra"><strong>45</strong><span>módulos HIS explicados en mi mapa interactivo</span></div>
+</div>
+</section>
+
 <section class="destacado" id="modulos-his">
 <a href="modulos-his.html" class="dest-card" aria-label="Explorar los 45 módulos de un HIS de forma interactiva">
 <span class="dest-badge">NUEVO</span>
@@ -312,6 +342,102 @@ a[download]{cursor:pointer}
 <p>Me apasiona la salud digital y el impacto que la tecnología puede generar en la atención de las personas. Mi experiencia combina conocimiento clínico y gestión de sistemas de información en salud, permitiéndome colaborar en proyectos de implementación, optimización de procesos e interoperabilidad de datos clínicos.</p>
 <img src="img_web.png" alt="Banner" class="banner">
 </section>
+
+<section id="experiencia">
+<h2>Experiencia</h2>
+<p>Implementación y soporte funcional de sistemas clínicos, con una base de 16 años de atención directa de pacientes críticos.</p>
+<p class="grupo">Consultora Funcional HIS · Layner Spa (proyectos de implementación)</p>
+<ol class="linea">
+<li><div class="card">
+<h3>TrakCare · Instituto de Neurocirugía Dr. Alfonso Asenjo</h3>
+<p class="donde">Abril 2026 – mayo 2026</p>
+<ul>
+<li>Soporte funcional a usuarios clínicos y administrativos.</li>
+<li>Gestión de incidencias bajo ITIL y validación de procesos.</li>
+<li>Capacitación de usuarios y documentación funcional.</li>
+</ul>
+</div></li>
+<li><div class="card">
+<h3>TrakCare · Hospital Barros Luco Trudeau</h3>
+<p class="donde">Octubre 2025 – diciembre 2025</p>
+<ul>
+<li>Implementación y soporte funcional durante la puesta en marcha.</li>
+<li>Capacité a más de 600 usuarios clínicos y administrativos.</li>
+<li>Seguimiento de incidencias y documentación funcional.</li>
+</ul>
+</div></li>
+<li><div class="card">
+<h3>SIDRA · Hospital Barros Luco Trudeau y Hospital San Luis de Buin</h3>
+<p class="donde">Noviembre 2024 – enero 2025</p>
+<ul>
+<li>Soporte funcional y gestión de tickets en GLPI.</li>
+<li>Levantamiento de requerimientos y validación de interoperabilidad.</li>
+</ul>
+</div></li>
+</ol>
+<p class="grupo">Antes de los sistemas clínicos</p>
+<ol class="linea">
+<li><div class="card">
+<h3>Gestión de Registros Clínicos · Clínica Dávila</h3>
+<p class="donde">Octubre 2024 – diciembre 2024</p>
+<ul><li>Listas de espera FONASA y control de calidad y consistencia de datos clínicos.</li></ul>
+</div></li>
+<li><div class="card">
+<h3>QA Funcional (práctica profesional) · Browse Chile</h3>
+<p class="donde">Agosto 2023 – noviembre 2023</p>
+<ul><li>Pruebas funcionales, reporte de incidencias y modelamiento de procesos en Bizagi.</li></ul>
+</div></li>
+<li><div class="card">
+<h3>TENS en unidades críticas y prehospitalaria</h3>
+<p class="donde">2010 – actualidad · UCI, UTI, UPC y traslado de pacientes críticos</p>
+<ul>
+<li>Monitorización de pacientes críticos y registro clínico con trazabilidad.</li>
+<li>Por eso entiendo cómo se usa un sistema de verdad durante el turno.</li>
+</ul>
+</div></li>
+</ol>
+</section>
+
+<section id="proyecto-his">
+<h2>Construí mi propio HIS para entender cómo funciona por dentro</h2>
+<p>melihealth-his es un prototipo con datos ficticios que uso como entorno de pruebas UAT. Reúne lo que hago como consultora: roles, flujos clínicos, estándares y gestión de incidencias.</p>
+<div class="grid">
+<div class="card">
+<h3>Qué incluye</h3>
+<ul>
+<li>Login, ficha de paciente, agenda, atenciones y diagnósticos.</li>
+<li>Auditoría de accesos y acciones.</li>
+<li>Módulos de interoperabilidad FHIR y HL7.</li>
+<li>Módulo de incidencias bajo ITIL.</li>
+</ul>
+</div>
+<div class="card">
+<h3>Perfilamiento de usuarios</h3>
+<ul>
+<li>Roles de prueba: administrador, admisión, médico, enfermería, TENS, tecnología médica, farmacia, administrativo, calidad e interoperabilidad.</li>
+<li>Casos UAT por rol y registro de fallos.</li>
+</ul>
+</div>
+<div class="card">
+<h3>Qué demuestra</h3>
+<ul>
+<li>Levantamiento de requerimientos y validación de procesos clínicos.</li>
+<li>Pruebas de aceptación por perfil.</li>
+<li>Estándares aplicados: HL7, FHIR, CIE-10.</li>
+</ul>
+</div>
+</div>
+<p class="aviso">Todos los pacientes y usuarios son ficticios. El proyecto no contiene datos reales de personas.</p>
+<div class="links">
+<a href="modulos-his.html">🧩 Explorar los 45 módulos</a>
+<a href="mapa-roles-his.html">🔐 Mapa de roles</a>
+<!-- Cuando tengas el repositorio o la demo, descomenta y pon tus enlaces:
+<a href="TU-ENLACE-GITHUB" target="_blank" rel="noopener">💻 Ver el código en GitHub</a>
+<a href="TU-ENLACE-DEMO" target="_blank" rel="noopener">▶ Probar la demo</a>
+-->
+</div>
+</section>
+
 <section id="salud-digital">
 <h2>Servicios en salud digital</h2>
 <div class="grid">
@@ -453,7 +579,6 @@ a[download]{cursor:pointer}
 <div class="links">
 <a href="https://www.minsal.cl/" target="_blank" rel="noopener">🏥 www.minsal.cl</a>
 </div>
-<p style="margin-top:20px">Puedes destacar aquí noticias relevantes, cambios en protocolos, nuevas guías clínicas o actualizaciones relacionadas con salud digital.</p>
 </section>
 
 <section id="contacto">
@@ -462,6 +587,7 @@ a[download]{cursor:pointer}
 <div class="links">
 <a href="mailto:melissazamoranolevy34@gmail.com">📧 melissazamoranolevy34@gmail.com</a>
 <a href="https://wa.me/56958758398" target="_blank" rel="noopener">📱 WhatsApp: +56 9 5875 8398</a>
+<a href="https://www.linkedin.com/in/melissaz-7713a4217" target="_blank" rel="noopener">💼 LinkedIn</a>
 </div>
 </section>
 </div>
